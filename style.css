@@ -928,6 +928,7 @@
             .comic-container {
                 height: 466px;
                  left: -20%;
+                display: block;
             }
             .spider-man .lego-body::after {
             content: "𖢥" ;
