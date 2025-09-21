@@ -13,6 +13,7 @@
             --card: #222;
             --text-light: #eee;
             --background: radial-gradient(circle at center, #0b0c10, #1f2833);
+            --light:aliceblue;
         }
 
         body {
@@ -128,7 +129,7 @@ nav .logo img {
         /* Header background with animated starfield and glowing gradient */
         .header {
             position: relative;
-            background:url(img/e039b2af-9364-4b8f-5c28-538153-unscreen.gif)  no-repeat center/contain ;
+            background:url(img/509888004_18512950156023412_2888175162704324996_n.jpg) no-repeat center center /cover;
             background-size:109%;
             overflow: hidden;
             padding: 0 0 3rem;
@@ -970,9 +971,9 @@ nav .logo img {
             --course-bg-image: url('img/taarangan theme.jpg');
         }
         .course {
-            padding: 4rem 2rem;
+            padding: 0.3rem 0.1rem;
             background: 
-                var(--course-bg-image) no-repeat center center / cover,
+                var() no-repeat center center / cover,
                 #111; /* fallback color */
             text-align: center;
         }
