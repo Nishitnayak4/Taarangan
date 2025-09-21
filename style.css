@@ -25,81 +25,104 @@
         }
 
         /* NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1c1f26;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            box-shadow: 0 0 15px #ff0000aa;
-        }
+       /* NAVBAR BASE */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(28, 31, 38, 0.3); /* transparent dark */
+    padding: 1rem 2rem;
+    position: sticky;
+    top: -41%;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px #ff0000aa;
+}
 
-        nav .logo img {
-            height: 80px;
-            filter: drop-shadow(0 0 5px #ff0000);
-        }
+/* Logo */
+nav .logo img {
+    height: 70px;
+    filter: drop-shadow(0 0 5px #ff0000);
+}
 
-        .nav-links {
-            position: fixed;
-            background: #111;
-            height: 100vh;
-            width: 250px;
-            top: 0;
-            right: -250px;
-            transition: 0.4s;
-            padding-top: 3rem;
-            box-shadow: -5px 0 15px #ff0000aa;
-            z-index: 9999;
-        }
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
 
-        .nav-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding-left: 1.5rem;
-        }
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
 
-        .nav-links ul li a {
-            color: #ff3f3f;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.3s ease;
-            text-shadow: 0 0 5px #ff3f3f;
-        }
+.nav-links ul li a {
+    color: #ff3f3f;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px #ff3f3f;
+}
 
-        .nav-links ul li a:hover,
-        .nav-links ul li a.active {
-            color: #ffb347;
-            text-shadow: 0 0 15px #ffb347;
-        }
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+    color: #ffb347;
+    text-shadow: 0 0 15px #ffb347;
+}
 
-        .fa-xmark {
-            position: absolute;
-            top: 2rem;
-            right: 13rem;
-            font-size: 2rem;
-            color: #ff3f3f;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+/* HAMBURGER & CLOSE ICON HIDDEN ON DESKTOP */
+.fa-bars,
+.fa-xmark {
+    display: none;
+}
 
-        .fa-xmark:hover {
-            transform: rotate(96deg);
-        }
+/* MOBILE VIEW */
+@media (max-width: 992px) {
+    .fa-bars {
+        display: block; /* hamburger visible */
+        font-size: 2rem;
+        color: #ff3f3f;
+        cursor: pointer;
+        text-shadow: 0 0 10px #ff3f3f;
+    }
 
-        .fa-bars {
-            font-size: 2rem;
-            color: #ff3f3f;
-            cursor: pointer;
-            user-select: none;
-            text-shadow: 0 0 10px #ff3f3f;
-        }
+    .fa-xmark {
+        display: block; /* close button visible */
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        font-size: 2rem;
+        color: #ff3f3f;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: rgba(17, 17, 17, 0.95);
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: -250px; /* hidden initially */
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: 4rem;
+        box-shadow: -5px 0 15px #ff0000aa;
+        transition: 0.4s ease;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-left: 1.5rem;
+    }
+}
+
+
 
         /* HEADER TEXT BOX */
         /* Header background with animated starfield and glowing gradient */
@@ -108,7 +131,7 @@
             background:url(img/e039b2af-9364-4b8f-5c28-538153-unscreen.gif)  no-repeat center/contain ;
             background-size:109%;
             overflow: hidden;
-            padding: 4rem 2rem 3rem;
+            padding: 0 0 3rem;
             text-align: center;
             z-index: 1;
             margin-bottom: -3%;
