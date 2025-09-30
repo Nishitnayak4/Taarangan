@@ -37,13 +37,12 @@ nav {
     position: sticky;
     top: -41%;
     z-index: 10000;
-    backdrop-filter: blur(10px);
-    
+    backdrop-filter: blur(10px);    
 }
 
 /* Logo */
 nav .logo img {
-    height: 141px;
+    height: 88px;
     filter: drop-shadow(0 0 5px #ffb347);
 }
 
@@ -84,6 +83,7 @@ nav .logo img {
     display: none;
 }
 
+
 /* MOBILE VIEW */
 @media (max-width: 992px) {
     .fa-bars {
@@ -94,6 +94,7 @@ nav .logo img {
         text-shadow: 0 0 10px #ff3f3f;
         margin-right: 6%;
     }
+   
 
     .fa-xmark {
         display: block; /* close button visible */
@@ -111,12 +112,13 @@ nav .logo img {
         height: 100vh;
         width: 250px;
         top: 0;
-        right: -277px; /* hidden initially */
+        right: -304px; /* hidden initially */
         flex-direction: column;
         gap: 1.5rem;
         padding-top: 4rem;
         box-shadow: -5px 0 15px #ff0000aa;
         transition: 0.4s ease;
+       
     }
 
     .nav-links ul {
@@ -660,7 +662,6 @@ nav .logo img {
             background: #000;
             border-radius: 0 0 10px 10px;
         }
-        
         /* Hulk Lego */
         .hulk .lego-head {
             background: #339966;
@@ -958,23 +959,15 @@ nav .logo img {
                  left: -20%;
                 display: block;
             }
-            .spider-man .lego-body::after {
-            content: "𖢥" ;
-            position: absolute;
-            width: 0;
-            background-color:transparent;
-            border-radius: 10px;
-            margin-right: 43%;
-            font-size: 2rem;   
-        }
             @media (max-width: 768px) {
-  .header {
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;  /* still full screen */
-    padding: 2rem 1rem;
-    backdrop-filter: var();
-  }
+            .header {
+               background-size: cover;
+               background-position: center;
+               min-height: 50vh;  /* still full screen */
+               padding: 1rem 1rem;
+               backdrop-filter: var();
+                background-image: url(img/date2.jpg);
+              }    
 }
             
         }
@@ -1189,6 +1182,7 @@ nav .logo img {
             color: var(--accent, #ff3f3f);
         }
 
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .footer-container {
@@ -1201,6 +1195,12 @@ nav .logo img {
                 margin-top: 2rem;
                 text-align: center;
                 align-items: center;
+            }
+            .footer-socials {
+            display: flex;
+            gap: 1rem;
+            font-size: 1.5rem;
+            margin-left: 9%;
             }
         }
 
