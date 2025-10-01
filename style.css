@@ -68,7 +68,6 @@ nav .logo img {
     letter-spacing: 0.1em;
     transition: color 0.3s ease;
     filter: drop-shadow(0 0 5px #000);
-     font-family: 'Bangers', cursive;
 }
 
 .nav-links ul li a:hover,
