@@ -21,17 +21,23 @@
       * {
         box-sizing: border-box;
       }
+      html, body {
+  overflow-x: hidden;  /* no horizontal scroll ever */
+}
+
+      html, body {
+  overflow-x: hidden; /* never allow side scroll */
+}
+
+body.nav-open {
+  overflow: hidden; /* stop vertical + horizontal scroll */
+}
 
       body {
-        margin: 0;
         font-family: "Poppins", sans-serif;
         background: var(--text-light);
-        color: #eee;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;          /* prevent horizontal scrollbar */
-        -ms-overflow-style: none;    /* hide scrollbar in IE */
+        color: #eee;    /* hide scrollbar in IE */
+        
       }
 
       h1 {
@@ -57,6 +63,52 @@
         padding: 1rem;
         margin-bottom: 1rem;
       }
+      
+      
+      /* Sidebar styles */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;              /* sidebar width */
+  height: 100vh;
+  background: #111;          /* dark background */
+  z-index: 9999;
+  transform: translateX(100%);   /* hidden off-screen by default */
+  transition: transform 0.3s ease-in-out;
+  padding-top: 60px;
+}
+
+.nav-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 20px;
+}
+
+.nav-links i.fa-xmark {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #ff3f3f;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  color: #ff3f3f;
+  cursor: pointer;
+  margin-right: 20px;
+  z-index: 10000;
+}
+
+body.nav-open .fa-bars {
+  display: none;  /* hide bars when menu is open */
+}
+
+
 
       /* Gallery container */
       main.gallery-wrapper {
@@ -204,7 +256,7 @@
         .master-strange {
           display: block;
           position: relative;
-          bottom: 9rem;
+          bottom: 3rem;
           left: 12rem;
           z-index: 11;
         }
@@ -219,17 +271,6 @@
           column-count: 5;
         }
       }
-
-      /* ✅ Added scrollbar hiding */
-      .nav-links {
-        overflow-y: auto;            /* allow vertical scrolling */
-        -ms-overflow-style: none;    /* IE & old Edge */
-        scrollbar-width: none;       /* Firefox */
-      }
-
-      .nav-links::-webkit-scrollbar {
-        display: none;               /* Chrome & Safari */
-      }
     </style>
   </head>
 
@@ -239,7 +280,8 @@
         <img src="img/taarangan%20WHITE.png" alt="Taarangan Logo" />
       </div>
       <div class="nav-links" id="navLinks">
-        <i class="fa fa-xmark" onclick="hideMenu()"></i>
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
@@ -251,7 +293,8 @@
           <!-- <li><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-instagram"  style="margin-right:1%" ></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-facebook-square" style="margin-right:4%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fa-solid fa-user"></i></a> </li> -->
         </ul>
       </div>
-      <i class="fa fa-bars" onclick="showMenu()"></i>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+
     </nav>
 
     <div class="mobile-header">
@@ -420,17 +463,25 @@
       </div>
     </footer>
 
-    <script>
-      const navLinks = document.getElementById("navLinks");
+<script>
+  const navLinks = document.getElementById("navLinks");
+  const body = document.body;
 
-      function showMenu() {
-        navLinks.style.right = "0";
-      }
+  function showMenu() {
+  navLinks.style.transform = "translateX(0)";
+  body.classList.add("nav-open");
+}
 
-      function hideMenu() {
-        navLinks.style.right = "-250px";
-      }
-    </script>
+function hideMenu() {
+  navLinks.style.transform = "translateX(100%)";
+  body.classList.remove("nav-open");
+}
+
+</script>
+
+
+
+
 
     <script>
       const filterFab = document.getElementById("filterFab");
