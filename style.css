@@ -50,6 +50,7 @@ nav .logo img {
 .nav-links {
     display: flex;
     gap: 3rem;
+    
 }
 
 .nav-links ul {
@@ -75,6 +76,7 @@ nav .logo img {
     color: #ffb347;
     text-shadow: 0 0 15px #000;
 }
+
 
 /* HAMBURGER & CLOSE ICON HIDDEN ON DESKTOP */
 .fa-bars,
@@ -111,13 +113,12 @@ nav .logo img {
         height: 100vh;
         width: 250px;
         top: 0;
-        right: -304px; /* hidden initially */
+        right: -287px; /* hidden initially */
         flex-direction: column;
         gap: 1.5rem;
         padding-top: 4rem;
         box-shadow: -5px 0 15px #ff0000aa;
         transition: 0.4s ease;
-       
     }
 
     .nav-links ul {
@@ -126,6 +127,9 @@ nav .logo img {
         padding-left: 1.5rem;
         
     }
+    body.nav-open {
+  overflow: hidden;   /* stop scrolling when menu is open */
+}
 }
 
 
@@ -140,7 +144,7 @@ nav .logo img {
             padding: 0 0 2rem;
             text-align: center;
             z-index: 1;
-            margin-bottom: 1%;
+            margin-bottom: 0%;
         }
 
         .header::before {
@@ -337,8 +341,8 @@ nav .logo img {
         }
         
         .comic-title {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 4.1rem;
+            margin-bottom: 1px;
             color: #f0131e;
             text-shadow: 3px 3px 0 #000, 
                          -1px -1px 0 #000, 
@@ -347,6 +351,7 @@ nav .logo img {
                          1px 1px 0 #000;
             letter-spacing: 2px;
             font-family: 'Bangers', cursive;
+            margin-right: 16%;
         }
         
         .comic-subtitle {
@@ -355,6 +360,7 @@ nav .logo img {
             font-weight: bold;
             font-family: 'Bangers', cursive;
             letter-spacing: 1px;
+            margin-right: 16%;
         }
         
         .lego-container {
@@ -965,8 +971,9 @@ nav .logo img {
                min-height: 50vh;  /* still full screen */
                padding: 1rem 1rem;
                backdrop-filter: var();
-                background-image: url(img/date2.jpg);
-              }    
+                background-image: url(icons/date_mobile.png);
+              } 
+                
 }
             
         }
@@ -1134,6 +1141,7 @@ nav .logo img {
 
         .footer-logo {
             max-width: 331px;
+            margin-left:12% ;
         }
 
         .footer-socials {
@@ -1306,6 +1314,7 @@ nav .logo img {
             display: block;
         }
         
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .row {
@@ -1327,6 +1336,41 @@ nav .logo img {
             height: 100%;
         }
         }
+
+.sponsors {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.sponsor-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ff3f3f;
+  text-shadow: 0 0 10px #ff3f3f;
+}
+
+.sponsor-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sponsor-logos a {
+  display: inline-block;
+  max-width: 150px;
+}
+
+.sponsor-logos img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 
 
