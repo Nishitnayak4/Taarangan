@@ -17,6 +17,13 @@
 </head>
 
 <body>
+  <div id="intro-video-container">
+    <video id="intro-video" autoplay muted playsinline>
+      <source src="video/intro1.mp4" type="video/mp4" />
+      <!-- fallback text -->
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <!-- HEADER & NAVIGATION -->
   <section class="header">
@@ -29,8 +36,14 @@
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
-          <li><a href="team.html">TEAM</a></li>
-          <li><a href="events.html">EVENTS</a></li>
+          <div class="dropdown">
+          <li><a href="#">TEAM</a></li>
+    <div class="dropdown-content">
+      <a href="team.html">core committee</a>
+      <a href="ok.html">website team</a>
+            </div> </div>
+         
+          
           <!--<li><a href="leaderboard.html" class="active">LEADERBOARD</a></li>-->
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
@@ -47,13 +60,13 @@
       <div class="comic-background"></div>
       
       <!-- Panel 1: Title Screen -->
-      <div class="comic-panel active" id="panel1">
+     <!--  <div class="comic-panel active" id="panel1">
         <div class="comic-header">
           <h1 class="comic-title">Taarangan ADVENTURE 24-25</h1>
           <p class="comic-subtitle">ASSEMBLE YOUR HEROES!</p>
         </div>
         
-      <!--  <div class="lego-container">
+       <div class="lego-container">
           <div class="lego-character iron-man" style="--delay: 0;">
             <div class="lego-head">
               <div class="lego-face">
@@ -308,12 +321,13 @@
                 CLICK NEXT TO BEGIN!
             </div>-->
     </div>
-    </div></section>
+    
+   </section>
   
 
   <!-- ABOUT / FEST INFO -->
   <section class="course">
-    <h1>About Taarangan 2025</h1>
+    <h1 class="comic-title">About Taarangan 2025</h1>
     <div class="row">
       <div class="course-col">
         <h3>What is Taarangan?</h3>
@@ -334,7 +348,8 @@
         </p>
       </div>
     </div>
-  </section></section>
+    </section>
+  </section>
 
   <!-- CAMPUS INFO -->
   <section class="campus">
@@ -388,6 +403,19 @@
     </a>
   </div>
 </section>
+ <section id="countdown-section" aria-label="Countdown to event">
+  <div class="countdown-card" data-target="2025-12-01T00:00:00+05:30">
+    <div class="countdown-title">CountDown</div>
+    <div id="countdown">
+      <div class="time-part"><span class="num" id="cd-days">0</span><span class="label">Days</span></div>
+      <div class="time-part"><span class="num" id="cd-hours">0</span><span class="label">Hours</span></div>
+      <div class="time-part"><span class="num" id="cd-mins">0</span><span class="label">Minutes</span></div>
+      <div class="time-part"><span class="num" id="cd-secs">0</span><span class="label">Seconds</span></div>
+    </div>
+    <div id="countdown-message" class="countdown-message" role="status" aria-live="polite"></div>
+  </div>
+</section>
+
   </section>
 
   <!-- FOOTER -->
@@ -512,5 +540,62 @@
             addLegoDots();
         });
     </script>
+    <script>
+(function(){
+  // Modify these to match your nav structure
+  
+  // Create list item
+  const li = document.createElement('li');
+
+  li.setAttribute('aria-hidden','false');
+  li.innerHTML = '<a href="#countdown-section" class="nav-countdown-link" title="Countdown"><span class="cd-d">0</span>d <span class="cd-h">00</span>:<span class="cd-m">00</span>:<span class="cd-s">00</span></a>';
+
+  navUl.appendChild(li);
+
+  // target date
+  const target = new Date('2025-12-01T00:00:00+05:30');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function updateNav(){
+    const now = new Date();
+    let diff = target.getTime() - now.getTime();
+    if (diff <= 0){
+      li.querySelector('.nav-countdown-link').textContent = 'LIVE';
+      clearInterval(navTimer);
+      return;
+    }
+    const days = Math.floor(diff / (24*60*60*1000));
+    diff -= days * 24*60*60*1000;
+    const hours = Math.floor(diff / (60*60*1000));
+    diff -= hours * 60*60*1000;
+    const mins = Math.floor(diff / (60*1000));
+    diff -= mins * 60*1000;
+    const secs = Math.floor(diff / 1000);
+
+    li.querySelector('.cd-d').textContent = days;
+    li.querySelector('.cd-h').textContent = pad(hours);
+    li.querySelector('.cd-m').textContent = pad(mins);
+    li.querySelector('.cd-s').textContent = pad(secs);
+  }
+
+  
+})();
+</script>
+<script>
+    const intro = document.getElementById('intro-video');
+    const container = document.getElementById('intro-video-container');
+    const main = document.getElementById('main-content');
+
+    // When video ends, fade out and show main site
+    intro.addEventListener('ended', () => {
+      container.classList.add('fade-out');
+      setTimeout(() => {
+        container.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        main.classList.add('show');
+      }, 1000); // wait for fade-out animation
+    });
+  </script>
+
 </body>
 </html>
