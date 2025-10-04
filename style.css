@@ -83,6 +83,86 @@ nav .logo img {
 .fa-xmark {
     display: none;
 }
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  color: #ffb347;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #000);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.dropdown .dropbtn:hover,
+.dropdown:hover .dropbtn {
+  color: #ffb347;
+  text-shadow: 0 0 15px #000;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: rgba(28, 31, 38, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #ffb347;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 3px #000);
+}
+
+.dropdown-content a:hover {
+  background: rgba(255, 179, 71, 0.15);
+  color: #ffb347;
+  text-shadow: 0 0 10px #000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 992px) {
+  .dropdown-content {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+
+  .dropdown-content a {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
 
 
 /* MOBILE VIEW */
@@ -267,11 +347,6 @@ nav .logo img {
                 top: 108%;
                 left: -43%;
             }
-            .header {
-                padding: 2rem 1rem 3rem;
-                background-size: 198%;
-                background-position: left;
-            }
             .text-box h1 {
                 font-size: 1.8rem;
             }
@@ -282,6 +357,14 @@ nav .logo img {
                 font-size: 1rem;
             }
         }
+@media (max-width: 768px) {
+  header {
+    background: url("icons/date_mobile.png") no-repeat center top;
+    background-size: contain;   /* pura image visible rahega */
+    background-repeat: no-repeat;
+  }
+}
+
         
         /* LEGO COMIC SECTION */
         .comic-section {
@@ -351,7 +434,7 @@ nav .logo img {
                          1px 1px 0 #000;
             letter-spacing: 2px;
             font-family: 'Bangers', cursive;
-            margin-right: 16%;
+            margin-right: -1%;
         }
         
         .comic-subtitle {
@@ -964,17 +1047,7 @@ nav .logo img {
                  left: -20%;
                 display: block;
             }
-            @media (max-width: 768px) {
-            .header {
-               background-size: cover;
-               background-position: center;
-               min-height: 50vh;  /* still full screen */
-               padding: 1rem 1rem;
-               backdrop-filter: var();
-                background-image: url(icons/date_mobile.png);
-              } 
-                
-}
+            
             
         }
 
@@ -1140,15 +1213,15 @@ nav .logo img {
         }
 
         .footer-logo {
-            max-width: 331px;
-            margin-left:12% ;
+            max-width: 335px;
+            margin-left:9% ;
         }
 
         .footer-socials {
             display: flex;
-            gap: 1rem;
+            gap: 1.3rem;
             font-size: 1.5rem;
-            margin-left: 23%;
+            margin-left: 17%;
         }
 
         .footer-socials a {
@@ -1163,7 +1236,7 @@ nav .logo img {
         .copyright {
             font-size: 0.9rem;
             margin-top: 0;
-            margin-left:1%;
+            margin-left:4rem;
         }
 
         .footer-nav {
@@ -1205,10 +1278,14 @@ nav .logo img {
             }
             .footer-socials {
             display: flex;
-            gap: 1rem;
+            gap: 1.3rem;
             font-size: 1.5rem;
-            margin-left: 9%;
+            margin-left: 23%;
             }
+            .footer-logo {
+            max-width: 331px;
+            margin-left:2% ;
+        }
         }
 
 
@@ -1276,16 +1353,19 @@ nav .logo img {
             border-radius: 12px;
             object-fit: cover;
             display: block;
-            margin: 0 auto;
+            margin: 1% auto;
         }
         
         /* Align paragraph text on right side in About the college */
+.about-us{
+    background-color: var(--light)
+    
+}
         .about-col p  {
             font-size: 1rem;
-            line-height: 1.7;
             margin-bottom: 3rem;
             margin-top: 1rem;
-            color: #ddd;
+            color: #000;
             margin-left: 4rem;
             margin-right: 4rem;
             font-family: Arial, Helvetica, sans-serif
@@ -1295,9 +1375,9 @@ nav .logo img {
             text-align: center;
             font-size: 3rem;
             line-height: 1.5;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            color: #ddd;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            color:orange;
         }
 
         /* Video centering */
@@ -1371,6 +1451,113 @@ nav .logo img {
   display: block;
 }
 
+
+#countdown-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.countdown-card {
+  background: var(--honey);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  backdrop-filter: blur(6px);
+  text-align: center;
+  width: 100%;
+  max-width: 760px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
+.countdown-title {
+  font-size: 1.49rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--dark);
+   font-family: 'Bangers', cursive;
+}
+
+#countdown {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-part {
+  min-width: 72px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.time-part .num {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.time-part .label {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.countdown-message {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+@media (max-width: 420px) {
+  .time-part {
+    min-width: 60px;
+    padding: 6px;
+  }
+  .time-part .num {
+    font-size: 1.25rem;
+  }
+}
+
+
+#intro-video-container {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #intro-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Fade-out effect */
+    .fade-out {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+      pointer-events: none;
+    }
+
+    /* Hide site content initially */
+    #main-content {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+    }
+
+    #main-content.show {
+      opacity: 1;
+    }
 
 
 
