@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Team - Mithibai Kshitij</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(---light);
+      color: #fff;
+    }
+
+    .team {
+      padding: 60px 20px;
+      background-image:url(img/ChatGPT%20Image%20Sep%2028,%202025,%2011_09_58%20PM.png);
+      text-align: center;
+    }
+
+    .team h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #ff3f3f;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-member {
+      background: #1c1f26;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s var(--accent);
+      box-shadow: 0 0 55px #ffb34788;
+        
+        
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .member-img img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #ff3f3f;
+    }
+
+    .team-member h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+   <nav>
+      <div class="logo">
+        <img src="img/taarangan%20WHITE.png" alt="Taarangan Logo" />
+      </div>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <div class="dropdown">
+          <li><a href="team.html">TEAM</a></li>
+    <div class="dropdown-content">
+      <a href="team.html">core committee</a>
+      <a href="ok.html">website team</a>
+            </div> </div>
+         
+          <li><a href="events.html">EVENTS</a></li>
+          <!--<li><a href="leaderboard.html" class="active">LEADERBOARD</a></li>-->
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <!--<li><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-instagram"  style="margin-right:1%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-facebook-square" style="margin-right:4%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fa-solid fa-user"></i></a> </li>-->
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  <section class="team">
+    <div class="container">
+      <h2>Website Team</h2>
+      <div class="team-grid">
+
+        <!-- Example cards -->
+        <div class="team-member">
+          <h3>Nishit Nayak</h3>
+          <p>Developer</p>
+        </div>
+
+        <div class="team-member">
+          <h3>Member Two</h3>
+          <p>Developer</p>
+        </div>
+
+        <div class="team-member">
+          <h3>Member Three</h3>
+          <p>Developer</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  
+  <footer>
+  <div class="footer-container">
+   
+    <div class="footer-left">
+        <div class="master-strange">
+      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo">
+</div>
+      
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/taaranganfest/?locale=sc_IT"><i class="fab fa-facebook"></i></a>
+        <a href="contact.html"><i class="fa-solid fa-file"></i></a>
+        <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
+      </div> 
+
+     
+      <p class="copyright">© 2025 by Taarangan.</p>
+    </div>
+
+   
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+     
+      
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
