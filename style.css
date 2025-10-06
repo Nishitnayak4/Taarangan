@@ -220,9 +220,8 @@ nav .logo img {
             position: relative;
             background:url(img/date.png) no-repeat center /cover;
             background-size:cover;
-        
             overflow: hidden;
-            padding: 0 0 2rem;
+            padding: 0 0 2.4rem;
             text-align: center;
             z-index: 1;
             margin-bottom: 0%;
@@ -1288,6 +1287,11 @@ nav .logo img {
             .footer-logo {
             max-width: 331px;
             margin-left:2% ;
+        }
+            .copyright {
+            font-size: 0.9rem;
+            margin-top: 0;
+            margin-left:0;
         }
         }
 
