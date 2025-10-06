@@ -220,6 +220,7 @@ nav .logo img {
             position: relative;
             background:url(img/date.png) no-repeat center /cover;
             background-size:cover;
+             background-attachment: fixed;
             overflow: hidden;
             padding: 0 0 2rem;
             text-align: center;
@@ -359,9 +360,9 @@ nav .logo img {
         }
 @media (max-width: 768px) {
   header {
-    background: url("icons/date_mobile.png") no-repeat center top;
-    background-size: contain;   /* pura image visible rahega */
-    background-repeat: no-repeat;
+     background-position: center;
+    background-size: cover;
+    
   }
 }
 
@@ -1221,7 +1222,7 @@ nav .logo img {
             display: flex;
             gap: 1.3rem;
             font-size: 1.5rem;
-            margin-left: 17%;
+            margin-left: 33%;
         }
 
         .footer-socials a {
@@ -1557,6 +1558,12 @@ nav .logo img {
 
     #main-content.show {
       opacity: 1;
+    }
+
+@media (max-width: 768px) {
+      #intro-video {
+        object-fit: cover;
+      }
     }
 
 
