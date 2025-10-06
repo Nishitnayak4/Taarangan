@@ -9,9 +9,10 @@
   <!-- FontAwesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
+ <link rel="stylesheet" href="style.css" />
   <style>
     /* Reset & base */
     * {
@@ -19,10 +20,11 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      
     }
 
     body {
-      background: radial-gradient(circle at center, #0b0c10, #1f2833);
+      background-color:var(--muted);
       color: #eee;
       overflow-x: hidden;
       min-height: 100vh;
@@ -31,82 +33,7 @@
     }
 
     /* NAVIGATION */
-   nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1c1f26;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            box-shadow: 0 0 15px #ff0000aa;
-        }
-
-        nav .logo img {
-            height: 80px;
-            filter: drop-shadow(0 0 5px #ff0000);
-        }
-
-        .nav-links {
-            position: fixed;
-            background: #111;
-            height: 100vh;
-            width: 250px;
-            top: 0;
-            right: -250px;
-            transition: 0.4s;
-            padding-top: 3rem;
-            box-shadow: -5px 0 15px #ff0000aa;
-            z-index: 9999;
-        }
-
-        .nav-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .nav-links ul li a {
-            color: #ff3f3f;
-            font-weight: 600;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.3s ease;
-            text-shadow: 0 0 5px #ff3f3f;
-        }
-
-        .nav-links ul li a:hover,
-        .nav-links ul li a.active {
-            color: #ffb347;
-            text-shadow: 0 0 15px #ffb347;
-        }
-
-        .fa-xmark {
-            position: absolute;
-            top: 2rem;
-            right: 13rem;
-            font-size: 2rem;
-            color: #ff3f3f;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .fa-xmark:hover {
-            transform: rotate(96deg);
-        }
-
-        .fa-bars {
-            font-size: 2rem;
-            color: #ff3f3f;
-            cursor: pointer;
-            user-select: none;
-            text-shadow: 0 0 10px #ff3f3f;
-        }
-
+  
     /* HEADER TEXT BOX */
     .header {
       background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
@@ -118,7 +45,7 @@
 
     .text-box h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
+      font-size: 1.9rem;
       color: #ff3f3f;
       text-transform: uppercase;
       letter-spacing: 0.2em;
@@ -133,10 +60,12 @@
         0 0 150px #ffb347;
       animation: flicker 3s infinite alternate;*/
       margin-bottom: 0.6rem;
+      
     }
 
     .text-box h1 .marvel-glow {
       color: #e23636;
+     
      text-shadow:
         0 0 10px #e23636,
         0 0 20px #ff3f3f,
@@ -162,9 +91,9 @@
     /* TEAM SECTION */
     .team {
       padding: 4rem 2rem;
-      background: #111;
-      text-align: center;
-      color: #eee;
+      background-color:var(--light);
+      text-align:center;
+      color:#eee;
     }
 
     .team h1,
@@ -179,7 +108,7 @@
       max-width: 700px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
-      color: #ccc;
+      color: #000;
       text-shadow: 0 0 5px #0008;
     }
 
@@ -192,7 +121,7 @@
     }
 
     .team-member {
-      background: #222;
+      background:var(--honey);
       border-radius: -7px;
       padding: 1.5rem 1rem;
       width: 250px;
@@ -206,7 +135,7 @@
       position: relative;
       overflow: hidden;
       z-index: 1;
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 1s ease;
     }
 
     .team-member:hover {
@@ -219,118 +148,40 @@
     .team-member img {
       width: 150px;
       height: 150px;
-      border-radius: 7%;
+      border-radius: 0%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 3px solid #ff3f3f;
+      
       box-shadow: 0 0 15px #ff3f3faa;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
     }
 
     .team-member.big {
-      transform: scale(1.8);
+      transform: scale(1.4);
       z-index: 1000;
-      
+      background:var(--honey);
       border-radius: 20px;
       background: #222;
     }
+    
 
     .team-member h3 {
       font-size: 1.3rem;
       margin-bottom: 0.3rem;
-      color: #ffb347;
-      text-shadow: 0 0 10px #ffb347;
+      color: var(--dark);
+      text-shadow: 0 0 12px #fff;
     }
 
     .team-member p {
       font-size: 1rem;
-      color: #ddd;
+      color: #000;
       margin: 0.2rem 0 0;
+      text-shadow: 0 0 10px #fff;
     }
 
-    /* FOOTER */
-  footer {
-      background: var(--dark);
-      color: var(--muted);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      box-shadow: inset 0 5px 15px var(--accent);
-      user-select: none;
-      font-size: 0.9rem;
-    }
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-    
-}
-
-.footer-logo {
-   max-width: 331px;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
-}
-
-.footer-socials a {
-  color: #fff;
-  transition: color 0.3s;
- }
-
-.footer-socials a:hover {
-  color: var(--accent, #ff3f3f);
-}
-
-.copyright {
-  font-size: 0.9rem;
-  margin-top: 1rem;
-}
-
-.footer-nav {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  text-align: right;
-}
-
-.footer-nav li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-nav li a:hover {
-  color: var(--accent, #ff3f3f);
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-nav {
-    margin-top: 2rem;
-    text-align: center;
-    align-items: center;
-  }
-}
-    }
+  
+ 
 
     /* Animations */
     @keyframes flicker {
@@ -371,7 +222,7 @@
 
   <!-- HEADER & NAVIGATION -->
   <section class="header">
-    <nav>
+      <nav>
       <div class="logo">
         <img src="img/taarangan%20WHITE.png" alt="Taarangan Logo" />
       </div>
@@ -380,19 +231,25 @@
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
+          <div class="dropdown">
           <li><a href="team.html">TEAM</a></li>
+    <div class="dropdown-content">
+      <a href="team.html">core committee</a>
+      <a href="ok.html">website team</a>
+            </div> </div>
+         
           <li><a href="events.html">EVENTS</a></li>
-          <!-- <li><a href="leaderboard.html" class="active">LEADERBOARD</a></li> -->
+          <!--<li><a href="leaderboard.html" class="active">LEADERBOARD</a></li>-->
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
-           <li> <i class="fab fa-instagram" style="margin-right:6%" ></i> <i class="fab fa-facebook-square" style="margin-right:6%"></i> <i class="fa-solid fa-user"></i> </li>
+          <!--<li><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-instagram"  style="margin-right:1%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-facebook-square" style="margin-right:4%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fa-solid fa-user"></i></a> </li>-->
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
 
     <div class="text-box">
-      <h1>Meet the <span class="marvel-glow">Taarangan</span> Team</h1>
+      <h1>Meet the Taarangan Team</h1>
       <h2>Core Members 2k25</h2>
       <h3>Heroes behind the Multiverse Madness!</h3>
     </div>
@@ -400,28 +257,32 @@
 
   <!-- TEAM MEMBERS SECTION -->
   <section class="team">
+   
     <h1>Our Core Team</h1>
     <p>Dedicated heroes who make Taarangan 2k25 possible.</p>
     <h2>TOP CORE</h2>
-
-    <div class="team-row">
-      <div class="team-member">
-        <img src="img/dark_rider-character.webp" alt="Riddhi - Event Head" />
-        <h3></h3>
-        <p><strong>CP</strong></p>
+<div class="team-row">
+      <div class="team-member"> 
+       <p><strong><b>CHAIRPERSON</b></strong></p>
+        <img src="team/Dhruv%20.JPG" alt="Riddhi - Event Head" />
+        <h3>Dhruv</h3>
+       
       </div>
+    
       <div class="team-member">
-        <img src="img/dark_rider-character.webp" alt="Riddhi - Event Head" />
-        <h3>Riddhi Sharma</h3>
-        <p><strong>CP</strong></p>
+       <p><strong><b>CHAIRPERSON</b></strong></p>
+        <img src="team/Animesh%20.JPG" alt="Riddhi - Event Head" />
+        
+        <h3>Animesh</h3>
       </div>
+     
     </div><br>
 
     <div class="team-row">
       <div class="team-member">
-        <img src="img/force_mage-character.webp" alt="Nazia - Creative Lead" />
-        <h3>Nazia Khan</h3>
-        <p><strong>VCP</strong></p>
+        <p><strong>Vice ChairPerson</strong></p>
+        <img src="team/Jatin.JPG" alt="Nazia - Creative Lead" />
+        <h3>Jatin</h3>
       </div>
       <div class="team-member">
         <img src="img/force_mage-character.webp" alt="Nazia - Creative Lead" />
@@ -462,20 +323,45 @@
     </div><br>
 
     <div class="team-row">
-      <div class="team-member">
-        <img src="img/team/sneha.jpg" alt="Sneha Gupta - Marketing Lead" />
-        <h3>Sneha Gupta</h3>
-        <p><strong>Marketing Head</strong></p>
+      <div class="team-member"> 
+       <p><strong>Technicals Head</strong></p>
+        <img src="team/kunal.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>Kunal</h3>
       </div>
       <div class="team-member">
-        <img src="img/team/sneha.jpg" alt="Sneha Gupta - Marketing Lead" />
-        <h3>Sneha Gupta</h3>
-        <p><strong>Marketing Lead</strong></p>
+        <p><strong>Administration head</strong></p>
+        <img src="team/Varun.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>Varun</h3>
       </div>
       <div class="team-member">
-        <img src="img/team/sneha.jpg" alt="Sneha Gupta - Marketing Lead" />
-        <h3>alvin chipmunk</h3>
-        <p><strong>Marketing Lead</strong></p>
+       <p><strong>Marketing Head</strong></p>
+        <img src="team/Devesh.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>Devesh</h3>
+      </div>
+      <div class="team-member">
+        <p><strong>Digital Creative</strong></p>
+        <img src="team/GAUSHIK.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>gaushik</h3>
+      </div>
+      <div class="team-member">
+        <p><strong>Technical's dick</strong></p>
+        <img src="team/DSC_6403%20(1).JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>Ishaan</h3>
+      </div>
+      <div class="team-member">
+        <p><strong>Digital Creative</strong></p>
+        <img src="team/GAUSHIK.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>gaushik</h3>
+      </div>
+      <div class="team-member">
+        <p><strong>Digital Creative</strong></p>
+        <img src="team/GAUSHIK.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>gaushik</h3>
+      </div>
+      <div class="team-member">
+        <p><strong>Digital Creative</strong></p>
+        <img src="team/GAUSHIK.JPG" alt="Sneha Gupta - Marketing Lead" />
+        <h3>gaushik</h3>
       </div>
     </div>
   </section>
@@ -486,16 +372,15 @@
    
     <div class="footer-left">
         <div class="master-strange">
-       <img src="icons/taarangan-white.png" alt=" Logo" class="footer-logo">
+       <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo">
 </div>
       
       <div class="footer-socials">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fa-solid fa-file"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-       
+        <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/taaranganfest/?locale=sc_IT"><i class="fab fa-facebook"></i></a>
+        <a href="contact.html"><i class="fa-solid fa-file"></i></a>
+        <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
 
      
@@ -517,16 +402,49 @@
   <!-- JavaScript for toggle menu -->
   <script>
     const navLinks = document.getElementById("navLinks");
-    function showMenu() { navLinks.style.right = "0"; }
-    function hideMenu() { navLinks.style.right = "-250px"; }
 
-    // Click-to-enlarge feature only
-    const teamMembers = document.querySelectorAll('.team-member');
-    teamMembers.forEach(member => {
-      member.addEventListener('click', () => {
-        member.classList.toggle('big');
-      });
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-289px";
+    }
+  </script>
+    <script>
+// Click-to-enlarge feature
+const teamMembers = document.querySelectorAll('.team-member');
+
+teamMembers.forEach(member => {
+  member.addEventListener('click', () => {
+    // Close others if open
+    document.querySelectorAll('.team-member.big').forEach(opened => {
+      if (opened !== member) opened.classList.remove('big');
     });
+
+    member.classList.toggle('big');
+  });
+
+  // Close when mouse leaves the enlarged member
+  member.addEventListener('mouseleave', () => {
+    member.classList.remove('big');
+  });
+});
+
+// Close all enlarged members when scrolling
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.team-member.big')
+    .forEach(opened => opened.classList.remove('big'));
+});
+
+// Optional: Close popup on ESC
+document.addEventListener('keydown', e => {
+  if (e.key === "Escape") {
+    document.querySelectorAll('.team-member.big')
+      .forEach(opened => opened.classList.remove('big'));
+  }
+});
+
   </script>
 
 </body>
