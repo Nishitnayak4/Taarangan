@@ -220,7 +220,7 @@ nav .logo img {
             position: relative;
             background:url(img/date.png) no-repeat center /cover;
             background-size:cover;
-             background-attachment: fixed;
+        
             overflow: hidden;
             padding: 0 0 2rem;
             text-align: center;
@@ -359,9 +359,11 @@ nav .logo img {
             }
         }
 @media (max-width: 768px) {
-  header {
+  .header {
+      background-image: url(img/date.png);
      background-position: center;
     background-size: cover;
+       background-attachment: fixed;
     
   }
 }
@@ -1044,7 +1046,7 @@ nav .logo img {
             }
             
             .comic-container {
-                height: 466px;
+                height: 505px;
                  left: -20%;
                 display: block;
             }
