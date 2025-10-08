@@ -34,15 +34,16 @@ nav {
     align-items: center;
     background: rgba(28, 31, 38, 0.3); /* transparent dark */
     padding: 0.1rem 0.1rem;
+    
     position: sticky;
     top: -41%;
     z-index: 10000;
-    backdrop-filter: blur(10px);    
+    backdrop-filter: blur(10px); 
 }
 
 /* Logo */
 nav .logo img {
-    height: 88px;
+    height: 119px;
     filter: drop-shadow(0 0 5px #ffb347);
 }
 
@@ -69,6 +70,7 @@ nav .logo img {
     letter-spacing: 0.1em;
     transition: color 0.3s ease;
     filter: drop-shadow(0 0 5px #000);
+    text-decoration: none;
 }
 
 .nav-links ul li a:hover,
@@ -221,7 +223,7 @@ nav .logo img {
             background:url(img/date.png) no-repeat center /cover;
             background-size:cover;
             overflow: hidden;
-            padding: 0 0 2.4rem;
+            padding: 0 0 29.6rem;
             text-align: center;
             z-index: 1;
             margin-bottom: 0%;
@@ -975,7 +977,7 @@ nav .logo img {
         #panel2 .lego-character {
             animation-delay: calc(var(--delay) * 0.5s);
         }
-        
+
         #panel3 .lego-character {
             animation: bounce 2s infinite ease-in-out;
             animation-delay: calc(var(--delay) * 0.3s);
@@ -1066,8 +1068,9 @@ nav .logo img {
 
         .course h1 {
             font-size: 2.8rem;
-            color: #ff3f3f;
+            color:var(--honey);
             margin-bottom: 2rem;
+            font-family: 'Bangers', cursive;
         }
 
        .course .row {
@@ -1108,7 +1111,7 @@ nav .logo img {
         .campus {
             padding: 4rem 2rem;
             background-color: var(--light);  
-                ; /* fallback color */
+               
        box-shadow: inset 0 5px 15px var(--honey);
             text-align: center;
             color: #000;
@@ -1569,6 +1572,8 @@ nav .logo img {
 @media (max-width: 768px) {
       #intro-video {
         object-fit: cover;
+        
+          
       }
     }
 
