@@ -5,31 +5,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Taarangan 2k25 - About the Event & College</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+ <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <section class="sub-header">
-    <nav>
-      <a href="index.html"><img src="photos/output-onlinegiftools.gif" alt="Taarangan Logo" /></a>
+     <nav>
+      <div class="logo">
+        <img src="img/taarangan%20WHITE.png" alt="Taarangan Logo" />
+      </div>
       <div class="nav-links" id="navLinks">
-        <i class="fa fa-close" onclick="hideMenu()" role="button" tabindex="0" aria-label="Close menu"></i>
+        <i class="fa fa-xmark" onclick="hideMenu()"></i>
         <ul>
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
+          <div class="dropdown">
           <li><a href="team.html">TEAM</a></li>
+    <div class="dropdown-content">
+      <a href="team.html">core committee</a>
+      <a href="ok.html">website team</a>
+            </div> </div>
+         
           <li><a href="events.html">EVENTS</a></li>
           <!--<li><a href="leaderboard.html" class="active">LEADERBOARD</a></li>-->
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
-          <li> <i class="fa fa-instagram" style="margin-right:6%" ></i> <i class="fa fa-facebook-square" style="margin-right:6%"></i> <i class="fa-solid fa-user"></i> </li>
+          <!--<li><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-instagram"  style="margin-right:1%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-facebook-square" style="margin-right:4%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fa-solid fa-user"></i></a> </li>-->
         </ul>
       </div>
-      <i class="fa fa-bars" onclick="showMenu()" role="button" tabindex="0" aria-label="Open menu"></i>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
     
   </section>
@@ -48,7 +54,9 @@
           </video>
         </div>
       </div><p>
-          Taarangan is the eagerly awaited Annual Inter-Collegiate Cultural Festival of Thakur College of Science and Commerce (Autonomous). Now in its 18th year, Taarangan 2k25 embraces the Marvel Multiverse theme, bringing together students from across the country to celebrate creativity, talent, and culture. The fest features electrifying performances, thrilling competitions, workshops, and celebrity appearances, making it a spectacular event for all participants and attendees.
+          Taarangan is the eagerly awaited Annual Inter-Collegiate Cultural Festival of Thakur College of Science and Commerce(Autonomous).
+          Now in its 18th year, Taarangan 2k25 embraces the Marvel Multiverse theme, bringing together students from across the country to celebrate creativity, talent, and culture.
+          The fest features electrifying performances, thrilling competitions, workshops, and celebrity appearances, making it a spectacular event for all participants and attendees.
         </p>
       </div>
     </div><br><br><br><br>
@@ -73,7 +81,7 @@
    
     <div class="footer-left">
         <div class="master-strange">
-      <img src="img/taarangan%20WHITE.png" alt=" Logo" class="footer-logo">
+      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo">
 </div>
       
       <div class="footer-socials">
@@ -102,17 +110,16 @@
  </footer>
   <!----JavaScript for toggle menu---->
   <script>
-    var navLinks = document.getElementById("navLinks");
+    const navLinks = document.getElementById("navLinks");
 
     function showMenu() {
       navLinks.style.right = "0";
     }
 
     function hideMenu() {
-      navLinks.style.right = "-400px";
+      navLinks.style.right = "-289px";
     }
   </script>
- 
 </body>
 
 </html>
