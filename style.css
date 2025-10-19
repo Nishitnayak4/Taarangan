@@ -211,7 +211,10 @@ nav .logo img {
     }
     body.nav-open {
   overflow: hidden;   /* stop scrolling when menu is open */
-}
+    }
+    .nav{
+        padding: 10rem;
+    }
 }
 
 
@@ -223,7 +226,7 @@ nav .logo img {
             background:url(img/date.png) no-repeat center /cover;
             background-size:cover;
             overflow: hidden;
-            padding: 0 0 55rem;
+            padding: 0 0 29.6rem;
             text-align: center;
             z-index: 1;
             margin-bottom: 0%;
@@ -288,7 +291,7 @@ nav .logo img {
 
         /* Header Text Styling */
         .text-box h1 {
-            font-family: 'Comic Neue', cursive, sans-serif;
+            
             font-size: 3.5rem;
             color: #ff3f3f;
             text-transform: uppercase;
@@ -296,7 +299,7 @@ nav .logo img {
         }
 
         .text-box h2 {
-            font-family: 'Comic Neue', cursive, sans-serif;
+            font-family: 'Comic Neue',  sans-serif;
             font-size: 2.5rem;
             color: #ffb347;
             margin-bottom: 0.3rem;
@@ -304,7 +307,7 @@ nav .logo img {
         }
 
         .text-box h3 {
-            font-family: 'Comic Neue', cursive, sans-serif;
+            font-family: 'Comic Neue', sans-serif;
             font-size: 1.5rem;
             color: #ccc;
             margin-bottom: 2rem;
@@ -1056,11 +1059,11 @@ nav .logo img {
 
         /* ABOUT / COURSE SECTION */
         :root {
-            --course-bg-image: url('img/taarangan theme.jpg');
+            --course-bg-image: url('img/bg.webp');
         }
         .course {
             padding: 0.1rem 0.1rem;
-            background-color:var()  no-repeat center /cover ;
+            background-image:var()  no-repeat center /cover ;
             text-align: center;
         }
        
@@ -1110,7 +1113,6 @@ nav .logo img {
         .campus {
             padding: 4rem 2rem;
             background-color: var(--light);  
-               
        box-shadow: inset 0 5px 15px var(--honey);
             text-align: center;
             color: #000;
@@ -1344,14 +1346,14 @@ nav .logo img {
          
 .sponsors{
     background-color: transparent; 
-    padding:3rem 1rem; 
+    padding:1rem 0; 
     text-align:center; 
     color:#fff;
 }
 .sponsors h2{
     font-family: 'Poppins', sans-serif; 
     font-weight: 700; font-size: 2.5rem; 
-    margin-bottom: 2rem; color: #ff3f3f; 
+    margin-bottom: 0; color: #ff3f3f; 
     text-shadow: 0 0 10px #ff3f3f;
 }
         /* Image styling */
@@ -1417,47 +1419,87 @@ nav .logo img {
             .about-col:last-child p {
                 text-align: left;
             }
-            .campus-col{
-                width: 104%;
+          
+            .campus{
+                padding: 0;
             }
-            .campus-col img {
-            width: 100%;
-            height: 100%;
+            
+           .campus .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .campus-col {
+        /* Forces full width on mobile */
+        flex: 1 1 90%; 
+        max-width: 90%; 
+    }
         }
-        }
+        
+        
 
-.sponsors {
-  text-align: center;
-  padding: 3rem 1rem;
+/* 1. Define the Scrolling Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    /* CRITICAL FIX: -50% moves exactly one set of logos. 
+       We add the -2rem (the final margin) to ensure the reset is seamless. 
+       The 2rem is the spacing applied to the last logo of Set 1. */
+    100% {
+        transform: translateX(calc(-155% - 7rem));
+    }
 }
 
-.sponsor-heading {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #ff3f3f;
-  text-shadow: 0 0 10px #ff3f3f;
-}
-
+/* 2. Set up the Outer Container */
 .sponsor-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden; /* Hides the logos outside the viewing area */
+    white-space: nowrap; /* Keeps all logos on a single line */
+    /* Remove any previous flex/grid properties that might interfere with scrolling */
 }
 
+/* 3. Set up the Scrolling Track */
+.sponsor-track {
+    display: flex; /* Arranges the logos horizontally */
+    width: 200%; /* CRUCIAL: Makes the track double the width to hold the 2 sets of logos */
+    animation: scroll 30s linear infinite; /* Adjust '30s' to control speed */
+}
+
+/* 4. Style the Individual Logos */
 .sponsor-logos a {
-  display: inline-block;
-  max-width: 150px;
+    display: inline-block;
+    max-width: 150px; 
+    margin-right: 2rem; /* The value used in the keyframe fix */
+    flex-shrink: 0;
 }
 
-.sponsor-logos img {
-  width: 100%;
-  height: auto;
-  display: block;
+/* Optional: Pause on Hover (Good for UX) */
+.sponsor-logos:hover .sponsor-track {
+    animation-play-state: paused;
+}
+@media (max-width: 768px) {
+    /* Adjustments for the mobile view of sponsor logos */
+    .sponsor-logos {
+        /* This ensures the logos are centered when they stack */
+        justify-content: center;
+        /* Increase gap for better spacing when stacked */
+        gap: 2rem; 
+    }
+
+    .sponsor-logos a {
+        /* *** KEY CHANGE *** */
+        /* Forces each logo to take up most of the screen width to stack neatly */
+        max-width: 50%; /* Make them half the width of the container (e.g., 200px wide) */
+        width: 30%;     /* Use width property as a fallback */
+    }
+
+    /* Optional: If 50% is too large, you could try a fixed pixel width instead: */
+    /*
+    .sponsor-logos a {
+        max-width: 180px; 
+    }
+    */
 }
 
 
@@ -1575,7 +1617,6 @@ nav .logo img {
           
       }
     }
-
 
 
 
