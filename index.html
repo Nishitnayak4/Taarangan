@@ -327,7 +327,7 @@
 <section class="campus">
   <!-- ABOUT / FEST INFO -->
   <section class="course">
-    <h1 class="comic-title">About Taarangan 2025</h1>
+    <h1 >About Taarangan 2025</h1>
     <div class="row">
       <div class="course-col">
         <h3>What is Taarangan?</h3>
@@ -390,30 +390,30 @@
  
 
    
-  <section class="sponsors" aria-label="Our Sponsors">
+ <section class="sponsors" aria-label="Our Sponsors">
   <h2 class="sponsor-heading">Our Proud Sponsors</h2>
 
   <div class="sponsor-logos">
-    <a href="" target="_blank" rel="noopener" aria-label="Sponsor 1">
-      <img src="icons/240405504_263481638935933_7347939112205726228_n.jpg" alt="Sponsor 1 Logo" />
-    </a>
-    <a href="" target="_blank" rel="noopener" aria-label="Sponsor 2">
-      <img src="icons/508828428_18066032564109619_6060849171253448766_n.jpg" alt="Sponsor 2 Logo" />
-    </a>
-    <a href="#" target="_blank" rel="noopener" aria-label="Sponsor 3">
-      <img src="icons/466429285_1273465663851137_5461143309211325020_n.jpg" alt="Sponsor 3 Logo" />
-    </a>
-    <a href="" target="_blank" rel="noopener" aria-label="Sponsor 4">
-      <img src="icons/grave.jpg" alt="Sponsor 4 Logo" />
-    </a>
-    <a href="" target="_blank" rel="noopener" aria-label="Sponsor 4">
-      <img src="icons/grave.jpg" alt="Sponsor 4 Logo" />
-    </a>
-    <a href="" target="_blank" rel="noopener" aria-label="Sponsor 4">
-      <img src="icons/grave.jpg" alt="Sponsor 4 Logo" />
-    </a>
+    <div class="sponsor-track">
+      <!-- SET 1 -->
+      <a href="#"><img src="icons/240405504_263481638935933_7347939112205726228_n.jpg" alt="Sponsor 1"></a>
+      <a href="#"><img src="icons/508828428_18066032564109619_6060849171253448766_n.jpg" alt="Sponsor 2"></a>
+      <a href="#"><img src="icons/466429285_1273465663851137_5461143309211325020_n.jpg" alt="Sponsor 3"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 4"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 5"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 6"></a>
+
+      <!-- SET 2 (EXACT COPY for looping) -->
+      <a href="#"><img src="icons/240405504_263481638935933_7347939112205726228_n.jpg" alt="Sponsor 1"></a>
+      <a href="#"><img src="icons/508828428_18066032564109619_6060849171253448766_n.jpg" alt="Sponsor 2"></a>
+      <a href="#"><img src="icons/466429285_1273465663851137_5461143309211325020_n.jpg" alt="Sponsor 3"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 4"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 5"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 6"></a>
+    </div>
   </div>
 </section>
+
  <section id="countdown-section" aria-label="Countdown to event">
   <div class="countdown-card" data-target="2025-12-01T00:00:00+05:30">
     <div class="countdown-title">CountDown</div>
@@ -607,6 +607,42 @@
       }, 1000); // wait for fade-out animation
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.querySelector('.sponsor-track');
+        if (!track) return; // Exit if element not found
+
+        // 1. Get all individual logo containers (Set 1)
+        // We assume the first half of the track contains the original logos (6 logos in your case)
+        const logos = Array.from(track.querySelectorAll('a'));
+        const originalLogos = logos.slice(0, logos.length / 2);
+
+        let totalWidth = 0;
+        
+        // 2. Calculate the exact total width of the first set of logos
+        // The last logo in the first set doesn't have a margin-right that affects the loop distance
+        originalLogos.forEach((logo, index) => {
+            totalWidth += logo.offsetWidth;
+            // Only add margin for logos BEFORE the last one
+            if (index < originalLogos.length - 1) {
+                // Add the 2rem (32px) margin-right, assuming 16px is 1rem
+                totalWidth += 32; 
+            }
+        });
+        
+        // Or, a simpler way using getBoundingClientRect() if CSS is reliable:
+        // const firstSetWidth = track.scrollWidth / 2;
+        
+        // 3. Define the scroll duration (adjust time for desired speed)
+        // (100px / second is a good starting speed, adjust the divisor (100) as needed)
+        const scrollSpeed = 100; // Pixels per second
+        const duration = totalWidth / scrollSpeed;
+
+        // 4. Apply CSS variables to control the animation
+        track.style.setProperty('--scroll-distance', `-${totalWidth}px`);
+        track.style.animationDuration = `${duration}s`;
+    });
+</script>
 
 </body>
 </html>
