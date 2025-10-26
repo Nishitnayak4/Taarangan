@@ -16,6 +16,12 @@
             --light:aliceblue;
             --honey:#ffb347;
         }
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Comicy.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
         body {
             background: radial-gradient(circle at center, #0b0c10, #1f2833);
@@ -291,7 +297,7 @@ nav .logo img {
 
         /* Header Text Styling */
         .text-box h1 {
-            
+            font-family: 'Comic Neue', cursive, sans-serif;
             font-size: 3.5rem;
             color: #ff3f3f;
             text-transform: uppercase;
@@ -299,7 +305,7 @@ nav .logo img {
         }
 
         .text-box h2 {
-            font-family: 'Comic Neue',  sans-serif;
+            font-family: 'Comic Neue', cursive, sans-serif;
             font-size: 2.5rem;
             color: #ffb347;
             margin-bottom: 0.3rem;
@@ -307,7 +313,7 @@ nav .logo img {
         }
 
         .text-box h3 {
-            font-family: 'Comic Neue', sans-serif;
+            font-family: 'Comic Neue', cursive, sans-serif;
             font-size: 1.5rem;
             color: #ccc;
             margin-bottom: 2rem;
@@ -1072,7 +1078,7 @@ nav .logo img {
             font-size: 2.8rem;
             color:var(--honey);
             margin-bottom: 2rem;
-            font-family: 'Bangers', cursive;
+            font-family: 'MyFont', sans-serif;
         }
 
        .course .row {
@@ -1219,8 +1225,8 @@ nav .logo img {
         }
 
         .footer-logo {
-            max-width: 335px;
-            margin-left:9% ;
+            max-width: 354px;
+            margin-left:15% ;
         }
 
         .footer-socials {
@@ -1416,8 +1422,10 @@ nav .logo img {
                 max-width: 100%;
                 height: 10%;
             }
-            .about-col:last-child p {
+            .about-col p{
                 text-align: left;
+                margin: 0;
+                
             }
           
             .campus{
@@ -1438,70 +1446,59 @@ nav .logo img {
         
 
 /* 1. Define the Scrolling Animation */
+/* 1. Animation: infinite seamless scroll */
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    /* CRITICAL FIX: -50% moves exactly one set of logos. 
-       We add the -2rem (the final margin) to ensure the reset is seamless. 
-       The 2rem is the spacing applied to the last logo of Set 1. */
-    100% {
-        transform: translateX(calc(-155% - 7rem));
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves one full set of logos */
+  }
 }
 
-/* 2. Set up the Outer Container */
+/* 2. Outer Container */
 .sponsor-logos {
-    max-width: 1100px;
-    margin: 0 auto;
-    overflow: hidden; /* Hides the logos outside the viewing area */
-    white-space: nowrap; /* Keeps all logos on a single line */
-    /* Remove any previous flex/grid properties that might interfere with scrolling */
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* 3. Set up the Scrolling Track */
+/* 3. Scrolling Track */
 .sponsor-track {
-    display: flex; /* Arranges the logos horizontally */
-    width: 200%; /* CRUCIAL: Makes the track double the width to hold the 2 sets of logos */
-    animation: scroll 30s linear infinite; /* Adjust '30s' to control speed */
+  display: flex;
+  width: 200%; /* 2 sets of logos */
+  animation: scroll 20s linear infinite; /* Adjust 20s to control speed */
 }
 
-/* 4. Style the Individual Logos */
+/* 4. Logo Styling */
 .sponsor-logos a {
-    display: inline-block;
-    max-width: 150px; 
-    margin-right: 2rem; /* The value used in the keyframe fix */
-    flex-shrink: 0;
+  display: inline-block;
+  margin-right: 2rem;
+  flex-shrink: 0;
 }
 
-/* Optional: Pause on Hover (Good for UX) */
+.sponsor-logos img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem; /* optional */
+}
+
+/* 5. Pause animation on hover (optional) */
 .sponsor-logos:hover .sponsor-track {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
+
+/* 6. Responsive adjustments */
 @media (max-width: 768px) {
-    /* Adjustments for the mobile view of sponsor logos */
-    .sponsor-logos {
-        /* This ensures the logos are centered when they stack */
-        justify-content: center;
-        /* Increase gap for better spacing when stacked */
-        gap: 2rem; 
-    }
-
-    .sponsor-logos a {
-        /* *** KEY CHANGE *** */
-        /* Forces each logo to take up most of the screen width to stack neatly */
-        max-width: 50%; /* Make them half the width of the container (e.g., 200px wide) */
-        width: 30%;     /* Use width property as a fallback */
-    }
-
-    /* Optional: If 50% is too large, you could try a fixed pixel width instead: */
-    /*
-    .sponsor-logos a {
-        max-width: 180px; 
-    }
-    */
+  .sponsor-logos img {
+    width: 100px;
+  }
+  .sponsor-track {
+    animation: scroll 25s linear infinite; /* slower on mobile */
+  }
 }
-
 
 #countdown-section {
   display: flex;
