@@ -593,20 +593,35 @@
 })();
 </script>
 <script>
-    const intro = document.getElementById('intro-video');
-    const container = document.getElementById('intro-video-container');
-    const main = document.getElementById('main-content');
+  const intro = document.getElementById('intro-video');
+  const container = document.getElementById('intro-video-container');
+  const main = document.getElementById('main-content');
 
-    // When video ends, fade out and show main site
+  // Check if user has already seen the intro
+  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+
+  if (hasSeenIntro) {
+    // Skip intro — directly show main content
+    container.style.display = 'none';
+    main.classList.add('show');
+    document.body.style.overflow = 'auto';
+  } else {
+    // Play intro normally
     intro.addEventListener('ended', () => {
       container.classList.add('fade-out');
       setTimeout(() => {
         container.style.display = 'none';
         document.body.style.overflow = 'auto';
         main.classList.add('show');
-      }, 1000); // wait for fade-out animation
+      }, 1000);
+      // Mark intro as seen
+      localStorage.setItem('hasSeenIntro', 'true');
     });
-  </script>
+  }
+</script>
+
+
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const track = document.querySelector('.sponsor-track');
