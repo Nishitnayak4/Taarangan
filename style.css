@@ -16,12 +16,7 @@
             --light:aliceblue;
             --honey:#ffb347;
         }
-@font-face {
-    font-family: 'MyFont';
-    src: url('fonts/Comicy.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
         body {
             background: radial-gradient(circle at center, #0b0c10, #1f2833);
@@ -1074,12 +1069,20 @@ nav .logo img {
         }
        
 
-        .course h1 {
-            font-size: 2.8rem;
-            color:var(--honey);
-            margin-bottom: 2rem;
-            font-family: 'MyFont', sans-serif;
-        }
+       @font-face {
+    font-family: 'Comicy';
+    src: url('fonts/Comicy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.course h1 {
+    font-size: 2.8rem;
+    color: var(--honey);
+    margin-bottom: 2rem;
+    font-family: 'Comicy', cursive, sans-serif;
+}
+
 
        .course .row {
             display: flex;
@@ -1128,6 +1131,7 @@ nav .logo img {
             font-size: 2.8rem;
             color: #ffb347;
             margin-bottom: 1rem;
+            font-family: 'Comicy', cursive, sans-serif;
         }
 
         .campus p {
@@ -1357,7 +1361,7 @@ nav .logo img {
     color:#fff;
 }
 .sponsors h2{
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Comicy', cursive, sans-serif;
     font-weight: 700; font-size: 2.5rem; 
     margin-bottom: 0; color: #ff3f3f; 
     text-shadow: 0 0 10px #ff3f3f;
@@ -1379,9 +1383,9 @@ nav .logo img {
     
 }
         .about-col p  {
-            font-size: 1rem;
+            font-size: 1.9rem;
             margin-bottom: 3rem;
-            margin-top: 1rem;
+            margin-top: 1.2rem;
             color: #000;
             margin-left: 4rem;
             margin-right: 4rem;
@@ -1395,6 +1399,7 @@ nav .logo img {
             margin-top: 2rem;
             margin-bottom: 2rem;
             color:orange;
+            font-family: 'Comicy', cursive, sans-serif;
         }
 
         /* Video centering */
