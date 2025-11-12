@@ -589,19 +589,23 @@
   
 })();
 </script>
- <script>
-    const video = document.getElementById('intro-video');
-    const mainContent = document.getElementById('main-content');
+<script>
+    const video = document.getElementById("intro-video");
+    const mainContent = document.getElementById("main-content");
 
     video.onended = () => {
-      video.classList.add('fade-out');
+      video.classList.add("fade-out");
+
+      // Wait for fade-out to finish before hiding video
       setTimeout(() => {
-        video.style.display = 'none';
-        mainContent.style.display = 'block';
-      }, 1000); // wait for fade animation to finish
+        video.style.display = "none";
+        mainContent.style.display = "block";
+
+        // Enable scrolling after intro
+        document.body.style.overflow = "auto";
+      }, 1000);
     };
   </script>
-
 
 
 
