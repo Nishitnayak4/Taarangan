@@ -17,14 +17,9 @@
 </head>
 
 <body>
-  <div id="intro-video-container">
-    <video id="intro-video" autoplay muted playsinline>
-      <source src="video/intro1.mp4" type="video/mp4" />
-      <!-- fallback text -->
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
+ <video id="intro-video" autoplay muted playsinline>
+    <source src="video/intro1.mp4" type="video/mp4" />
+  </video>
   <!-- HEADER & NAVIGATION -->
   <section class="header">
     <nav>
@@ -37,7 +32,7 @@
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <div class="dropdown">
-          <li><a href="team.html">TEAM</a></li>
+          <li><a href="">TEAM</a></li>
     <div class="dropdown-content">
       <a href="team.html">core committee</a>
       <a href="website.html">website team</a>
@@ -402,6 +397,7 @@
       <a href="#"><img src="icons/grave.jpg" alt="Sponsor 4"></a>
       <a href="#"><img src="icons/grave.jpg" alt="Sponsor 5"></a>
       <a href="#"><img src="icons/grave.jpg" alt="Sponsor 6"></a>
+      <a href="#"><img src="icons/grave.jpg" alt="Sponsor 6"></a>
 
       <!-- SET 2 (EXACT COPY for looping) -->
       <a href="#"><img src="icons/240405504_263481638935933_7347939112205726228_n.jpg" alt="Sponsor 1"></a>
@@ -462,6 +458,7 @@
     </ul>
   </div>
 </footer>
+
 
   <!-- JavaScript for toggle menu -->
   <script>
@@ -592,33 +589,25 @@
   
 })();
 </script>
-<script>
-  const intro = document.getElementById('intro-video');
-  const container = document.getElementById('intro-video-container');
-  const main = document.getElementById('main-content');
+ <script>
+    const video = document.getElementById('intro-video');
+    const mainContent = document.getElementById('main-content');
 
-  // Check if user has already seen the intro
-  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-
-  if (hasSeenIntro) {
-    // Skip intro — directly show main content
-    container.style.display = 'none';
-    main.classList.add('show');
-    document.body.style.overflow = 'auto';
-  } else {
-    // Play intro normally
-    intro.addEventListener('ended', () => {
-      container.classList.add('fade-out');
+    video.onended = () => {
+      video.classList.add('fade-out');
       setTimeout(() => {
-        container.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        main.classList.add('show');
-      }, 1000);
-      // Mark intro as seen
-      localStorage.setItem('hasSeenIntro', 'true');
-    });
-  }
-</script>
+        video.style.display = 'none';
+        mainContent.style.display = 'block';
+      }, 1000); // wait for fade animation to finish
+    };
+  </script>
+
+
+
+
+
+
+
 
 
 
@@ -661,5 +650,3 @@
 
 </body>
 </html>
-
-
