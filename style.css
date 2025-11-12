@@ -1590,6 +1590,8 @@
       object-fit: cover;
       z-index: 9999;
       background-color: black;
+      overflow: hidden;
+      margin: 0;
     }
 
     /* Fade-out animation */
