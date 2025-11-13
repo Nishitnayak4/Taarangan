@@ -17,9 +17,12 @@
 </head>
 
 <body>
- <video id="intro-video" autoplay muted playsinline>
+  <video id="intro-video" autoplay muted playsinline>
     <source src="video/intro1.mp4" type="video/mp4" />
   </video>
+
+  <!-- Skip button -->
+  <button id="skip-btn">Skip Intro</button>
   <!-- HEADER & NAVIGATION -->
   <section class="header">
     <nav>
@@ -428,36 +431,37 @@
   <!-- FOOTER -->
   <footer>
   <div class="footer-container">
-   
     <div class="footer-left">
-        <div class="master-strange">
-      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo">
-</div>
-      
+      <div class="master-strange">
+        <img src="icons/taarangan_ffb347.png" alt="Logo" class="footer-logo">
+      </div>
+
+      <div class="master-strange">
+        <p>Scan the QR for brochure </p>
+        <img src="img/scanner  of borchure.jpg" alt="Brochure QR" class="footer-scanner">
+      </div>
+
       <div class="footer-socials">
         <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
         <a href="https://www.facebook.com/taaranganfest/?locale=sc_IT"><i class="fab fa-facebook"></i></a>
-        <a href="contact.html"><i class="fa-solid fa-file"></i></a>
+        <a href="https://www.threads.com/@taarangan"><i class="fa-brands fa-threads"></i></a>
         <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
 
-     
       <p class="copyright">© 2025 by Taarangan.</p>
     </div>
 
-   
     <ul class="footer-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="contact.html">Contact Us</a></li>
-     
-      
     </ul>
   </div>
 </footer>
+
 
 
   <!-- JavaScript for toggle menu -->
@@ -589,22 +593,25 @@
   
 })();
 </script>
-<script>
+ <script>
     const video = document.getElementById("intro-video");
+    const skipBtn = document.getElementById("skip-btn");
     const mainContent = document.getElementById("main-content");
 
-    video.onended = () => {
+    function endIntro() {
       video.classList.add("fade-out");
+      skipBtn.classList.add("fade-out");
 
-      // Wait for fade-out to finish before hiding video
       setTimeout(() => {
         video.style.display = "none";
+        skipBtn.style.display = "none";
         mainContent.style.display = "block";
-
-        // Enable scrolling after intro
-        document.body.style.overflow = "auto";
+        document.body.style.overflow = "auto"; // enable scrolling
       }, 1000);
-    };
+    }
+
+    video.onended = endIntro;
+    skipBtn.onclick = endIntro;
   </script>
 
 
