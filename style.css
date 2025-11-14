@@ -5,6 +5,9 @@
                 box-sizing: border-box;
                
             }
+            html, body {
+    overflow-x: hidden !important;
+}
             
             :root {
                 --accent: #ff3f3f;
@@ -212,9 +215,7 @@
         body.nav-open {
     overflow: hidden;   /* stop scrolling when menu is open */
         }
-        .nav{
-            padding: 10rem;
-        }
+        
     }
 
 
