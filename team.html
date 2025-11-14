@@ -21,10 +21,38 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      background: rgb(10, 0, 30);
-      transition: background-color 0.2s linear;
-    }
+   body {
+  background: radial-gradient(circle at top left, #0d0d0d 10%, #11131e 50%, #1f2833 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* soft moving glow layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.12), rgba(255, 69, 0, 0.08), transparent 70%),
+              radial-gradient(circle at 70% 60%, rgba(0, 255, 255, 0.1), rgba(138, 43, 226, 0.1), transparent 80%);
+  animation: smoothGlow 60s ease-in-out infinite alternate;
+  z-index: -1;
+  will-change: transform;
+  transform: translateZ(0);
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+
+@keyframes smoothGlow {
+  0% { transform: translate(-5%, -5%) scale(1.05); }
+  50% { transform: translate(5%, 5%) scale(1.1); }
+  100% { transform: translate(-5%, -5%) scale(1.05); }
+}
+
+
+
+
 
     section {
       min-height: 100vh;
@@ -32,7 +60,7 @@
 
     /* HEADER */
     .header {
-      background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+     background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #11131e, #191c25);
       padding: 4rem 2rem 1rem;
       text-align: center;
       position: relative;
@@ -44,17 +72,13 @@
       font-size: 1.9rem;
       color: #ff3f3f;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+     font-family: 'Comicy', cursive, sans-serif;
       margin-bottom: 0.6rem;
     }
 
     .text-box h1 .marvel-glow {
       color: #e23636;
-      text-shadow:
-        0 0 10px #e23636,
-        0 0 20px #ff3f3f,
-        0 0 30px #ff3f3f;
-      animation: pulseGlow 0.7s infinite alternate;
+
     }
 
     .text-box h2 {
@@ -91,7 +115,7 @@
       max-width: 700px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
-      color: #000;
+      color: #bcbcbc;
       text-shadow: 0 0 5px #0008;
     }
 
@@ -176,7 +200,7 @@
       display: block;
       position: relative;
       bottom: 0.5rem;
-      left: -2rem;
+      left: -3rem;
       z-index: 11;
     }
 
@@ -199,13 +223,44 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .strange{
+        left: 0;
+      }
     }
+
+    /* 💻 Desktop: full glow */
+@media (min-width: 769px) {
+  body::before {
+    background: radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.12), rgba(255, 69, 0, 0.08), transparent 70%),
+                radial-gradient(circle at 70% 60%, rgba(0, 255, 255, 0.1), rgba(138, 43, 226, 0.1), transparent 80%);
+    animation: smoothGlow 60s ease-in-out infinite alternate;
+  }
+}
+
+/* 📱 Tablets and smaller: softer, darker glow */
+@media (max-width: 768px) {
+  body::before {
+    background: radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.08), rgba(255, 69, 0, 0.05), transparent 70%),
+                radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.05), rgba(138, 43, 226, 0.05), transparent 80%);
+    animation: smoothGlow 80s ease-in-out infinite alternate;
+  }
+}
+
+/* 📱 Small phones: very subtle gradient */
+@media (max-width: 480px) {
+  body::before {
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.05), rgba(255, 69, 0, 0.04), transparent 75%);
+    animation: none; /* stop motion to save battery */
+  }
+}
+
   </style>
 </head>
 
 <body>
   <!-- HEADER -->
-  <section class="header">
+  <section class="team">
     <nav>
       <div class="logo">
         <img src="img/taarangan%20WHITE.png" alt="Taarangan Logo" />
@@ -216,23 +271,23 @@
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <div class="dropdown">
-            <li><a href="team.html">TEAM</a></li>
+            <li><a href="#">TEAM</a></li>
             <div class="dropdown-content">
               <a href="team.html">core committee</a>
-              <a href="ok.html">website team</a>
+              <a href="website.html">website team</a>
             </div>
           </div>
-          <li><a href="events.html">EVENTS</a></li>
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
+    
 
     <br><br>
     <div class="text-box">
-      <h1>Meet the Taarangan Team</h1>
+      <h1><span>Taarangan</span></h1>
       <h2>Core Members 2k25</h2>
       <h3>Heroes behind the Multiverse Madness!</h3>
     </div>
@@ -250,95 +305,244 @@
 
     <div class="team-row">
       <div class="team-member">
-        <img src="team/Dhruv%20.JPG" alt="Dhruv" />
+        <img src="team/Pillar/Dhruv.jpg" alt="Dhruv" />
         <br><br><br><br><br><br><br><br><br>
-        <h3>Dhruv</h3>
+        <h3>DHRUV RAWAL</h3>
         <p><strong>CHAIRPERSON</strong></p>
       </div>
 
       <div class="team-member">
-        <img src="team/Animesh%20.JPG" alt="Animesh" />
+        <img src="team/Pillar/Animesh_.jpg" alt="Animesh" />
         <br><br><br><br><br><br><br><br><br>
-        <h3>Animesh</h3><p><strong>CHAIRPERSON</strong></p>
+        <h3>ANIMESH BHOWMIK </h3><p><strong>CHAIRPERSON</strong></p>
       </div>
     </div><br>
 
     <div class="team-row">
       <div class="team-member">
-       <img src="team/Jatin.JPG" alt="Jatin" />
+       <img src="team/Pillar/Jatin.jpg" alt="Jatin" />
         <br><br><br><br><br><br><br><br><br>
-        <h3>Jatin</h3> 
+        <h3>Jatin Patel</h3> 
         <p><strong>Vice ChairPerson</strong></p>
       </div>
 
       <div class="team-member">
-        <p><strong>VCP</strong></p>
-        <img src="img/force_mage-character.webp" alt="Nazia" />
-        <h3>Nazia Khan</h3>
+       <img src="team/Pillar/Atharva.jpg" alt="Jatin" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>ATHARVA MORE</h3> 
+        <p><strong>Vice ChairPerson</strong></p>
       </div>
+
+      <div class="team-member">
+       <img src="team/Pillar/Nitin_.jpg" alt="Jatin" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Nitin Singh</h3> 
+        <p><strong>Vice ChairPerson</strong></p>
+      </div>
+
+      <div class="team-member">
+        <img src="team/Pillar/NILESH.JPG" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Nilesh</h3> 
+        <p><strong>Vice ChairPerson</strong></p>
+      </div>
+    
     </div><br>
 
-    <div class="team-row">
+      <div class="team-row">
       <div class="team-member">
+       <img src="team/Pillar/HRISHEETA.jpg" alt="Jatin" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Jatin</h3> 
         <p><strong>AAA</strong></p>
-        <img src="img/force_mage-cover.jpg" alt="Ronak" />
-        <h3>Ronak Dhanani</h3>
       </div>
+
+    
+      <div class="team-member">
+        <img src="team/Pillar/Akash.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Akash</h3> 
+        <p><strong>AAA</strong></p>
+      </div>
+
+      <div class="team-member">
+        <img src="team/Pillar/Ojas.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Ojas</h3> 
+        <p><strong>AAA</strong></p>
+      </div>
+    
     </div><br>
+
 
     <div class="team-row">
       <div class="team-member">
+        <img src="team/Pillar/Sumit.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Sumit</h3> 
         <p><strong>Special Taskforce</strong></p>
-        <img src="img/dark_rider-cover.jpg" alt="Sneha" />
-        <h3>Sneha Gupta</h3>
-      </div>
-
-      <div class="team-member">
-        <p><strong>Special Taskforce</strong></p>
-        <img src="img/dark_rider-cover.jpg" alt="Abhishek" />
-        <h3>Abhishek Parihar</h3>
       </div>
     </div><br>
 
+            <h1>Head Of the Department</h1>
+            <h2>HOD 2025</h2>
+
     <div class="team-row">
       <div class="team-member">
-        <p><strong>Technicals Head</strong></p>
-        <img src="team/kunal.JPG" alt="Kunal" />
-        <h3>Kunal</h3>
+        <img src="team/Hod/Varun.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Varun Bawa</h3> 
+        <p><strong>Admin Head</strong></p>
       </div>
 
       <div class="team-member">
-        <p><strong>Administration Head</strong></p>
-        <img src="team/Varun.JPG" alt="Varun" />
-        <h3>Varun</h3>
+        <img src="team/Hod/chris.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Chris</h3> 
+        <p><strong>Events Head</strong></p>
+      </div>
+
+      
+     <div class="team-member">
+        <img src="team/Hod/ANJAYAN.JPG" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Anjayan</h3> 
+        <p><strong>JUDGES AND CELEB Head</strong></p>
+       </div> </div> <br>
+
+          
+      <div class="team-row">
+      <div class="team-member">
+        <img src="team/Hod/Aditya_.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Aditya</h3> 
+        <p><strong>Media Head</strong></p>
       </div>
 
       <div class="team-member">
+        <img src="team/Hod/Hardik.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Hardik</h3> 
+        <p><strong>Media Head</strong></p>
+      </div>
+
+      <div class="team-member">
+        <img src="team/Hod/kunal.JPG" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Kunal</h3> 
+        <p><strong>Technical Head</strong></p>
+      </div>
+
+      <div class="team-member">
+        <img src="team/Hod/ishaan.JPG" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Ishaan</h3> 
+        <p><strong>Technical Head</strong></p>
+      </div>
+      </div> <br>
+
+      
+      <div class="team-row">
+      <div class="team-member">
+        <img src="team/Hod/Sachi.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Sanchi</h3> 
+        <p><strong>Public Relations</strong></p>
+       </div> 
+
+      <div class="team-member">
+        <img src="team/Hod/Arya.JPG" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Arya</h3> 
+        <p><strong>Public Relations</strong></p>
+       </div>
+       
+       <div class="team-member">
+        <img src="team/Hod/Devesh.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Devesh</h3> 
         <p><strong>Marketing Head</strong></p>
-        <img src="team/Devesh.JPG" alt="Devesh" />
-        <h3>Devesh</h3>
       </div>
-    </div>
-  </section>
+
+      <div class="team-member">
+        <img src="team/Hod/Om.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Om</h3> 
+        <p><strong>Marketing Head</strong></p>
+       </div>
+      </div><br>
+
+     
+
+      <div class="team-row">
+      <div class="team-member">
+        <img src="team/Hod/Aalok_.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Aalok</h3> 
+        <p><strong>SOCIAL MEDIA</strong></p>
+       </div> 
+
+      <div class="team-member">
+        <img src="team/Hod/SHIVANK.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Shivank</h3> 
+        <p><strong>SOCIAL MEDIA</strong></p>
+       </div>
+
+       <div class="team-member">
+        <img src="team/Hod/Daksh_.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Daksh</h3> 
+        <p><strong>Production head</strong></p>
+       </div> 
+
+       <div class="team-member">
+        <img src="team/Hod/Shashwat.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>Shashwat</h3> 
+        <p><strong>Production head</strong></p>
+       </div> 
+
+
+      </div><br>
+    </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-left">
+  <div class="footer-container">
+   
+    <div class="footer-left">
         <div class="master-strange">
-          <img src="icons/taarangan_ffb347.png" alt="Logo" class="footer-logo">
-        </div>
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.facebook.com/taaranganfest/?locale=sc_IT"><i class="fab fa-facebook"></i></a>
-          <a href="contact.html"><i class="fa-solid fa-file"></i></a>
-          <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
-        <p class="copyright">© 2025 by Taarangan.</p>
+      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo"></div>
+    <div class="master-strange">
+      <p>Scan the QR for brochure -></p>
+      <img src="img/scanner  of borchure.jpg" alt=" Logo" class="footer-scanner">
+</div>
+      
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/taaranganfest/?locale=sc_IT"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.threads.com/@taarangan"><i class="fa-brands fa-threads"></i></a>
+        <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
+
+     
+      <p class="copyright">© 2025 by Taarangan.</p>
     </div>
-  </footer>
+
+   
+    <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+     
+      
+    </ul>
+  </div>
+</footer>
 
   <!-- JS -->
   <script>
@@ -347,27 +551,7 @@
     function hideMenu() { navLinks.style.right = "-289px"; }
   </script>
 
-  <script>
-    // Click-to-enlarge
-    const teamMembers = document.querySelectorAll('.team-member');
-    teamMembers.forEach(member => {
-      member.addEventListener('click', () => {
-        document.querySelectorAll('.team-member.big').forEach(opened => {
-          if (opened !== member) opened.classList.remove('big');
-        });
-        member.classList.toggle('big');
-      });
-      member.addEventListener('mouseleave', () => member.classList.remove('big'));
-    });
-    window.addEventListener('scroll', () =>
-      document.querySelectorAll('.team-member.big').forEach(m => m.classList.remove('big'))
-    );
-    document.addEventListener('keydown', e => {
-      if (e.key === "Escape") {
-        document.querySelectorAll('.team-member.big').forEach(m => m.classList.remove('big'));
-      }
-    });
-  </script>
+ 
 
   <script>
   // Set each member's image as its background (no blur)
@@ -381,30 +565,6 @@
 </script>
 
 
-  <script>
-    // Smooth background scroll color change
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollY / maxScroll;
-      const colors = [
-        [10, 0, 30],
-        [128, 0, 128],
-        [255, 69, 0],
-        [0, 255, 255],
-        [255, 215, 0],
-        [0, 128, 0],
-        [75, 0, 130]
-      ];
-      const total = colors.length - 1;
-      const i = Math.floor(scrollPercent * total);
-      const t = (scrollPercent * total) - i;
-      const c1 = colors[i], c2 = colors[i + 1] || c1;
-      const r = Math.round(c1[0] + (c2[0] - c1[0]) * t);
-      const g = Math.round(c1[1] + (c2[1] - c1[1]) * t);
-      const b = Math.round(c1[2] + (c2[2] - c1[2]) * t);
-      document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-    });
-  </script>
+  
 </body>
 </html>
