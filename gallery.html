@@ -219,12 +219,8 @@ body.nav-open {
         cursor: pointer;
       }
 
-      .log {
-  width: 25rem;
-  height: 25rem;
-  object-fit: contain;
-}
      
+
 
       /* Media Queries for different screen sizes */
       @media (min-width: 450px) {
@@ -252,20 +248,7 @@ body.nav-open {
           column-count: 4;
         }
 
-        .master-strange {
-          display: block;
-          position: relative;
-          bottom: 3rem;
-          left: 1rem;
-          z-index: 11;
-          margin: -9%;
-        }
-
-        .master-strange img {
-          width: 380px;
-        }
       }
-
       @media (min-width: 1200px) {
         .gallery {
           column-count: 5;
@@ -435,14 +418,15 @@ body.nav-open {
       
     </main>
 
-    <footer>
+  <footer>
   <div class="footer-container">
-   
     <div class="footer-left">
-        <div class="master-strange">
-      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="logw">
-</div>
+      <div class="master-strange">
+        <img src="icons/taarangan_ffb347.png" alt="Logo" class="footer-logo">
+      </div>
+
       
+
       <div class="footer-socials">
         <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
@@ -450,22 +434,21 @@ body.nav-open {
         <a href="https://www.threads.com/@taarangan"><i class="fa-brands fa-threads"></i></a>
         <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
-     
+
       <p class="copyright">© 2025 by Taarangan.</p>
     </div>
 
-   
     <ul class="footer-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="contact.html">Contact Us</a></li>
-     
-      
     </ul>
   </div>
 </footer>
+ 
+
 
 <script>
   const navLinks = document.getElementById("navLinks");
