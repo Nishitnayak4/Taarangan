@@ -17,8 +17,9 @@
 
 <body>
   <video id="intro-video" autoplay muted playsinline>
-    <source src="video/intro1.mp4" type="video/mp4" />
-  </video>
+    <source id="intro-source" src="" type="video/mp4">
+</video>
+
 
   <!-- Skip button -->
   <button id="skip-btn">Skip Intro</button>
@@ -26,7 +27,7 @@
   <section class="header">
     <nav>
       <div class="logo">
-        <img src="img/ChatGPT%20Image%20Sep%2030,%202025,%2010_52_17%20PM.png" alt="Taarangan Logo" />
+        <img src="img/taarangan WHITE.png" alt="Taarangan Logo" />
       </div>
       <div class="nav-links" id="navLinks">
         <i class="fa fa-xmark" onclick="hideMenu()"></i>
@@ -412,11 +413,6 @@
         <img src="icons/taarangan_ffb347.png" alt="Logo" class="footer-logo">
       </div>
 
-      <div class="master-strange">
-        <p>Scan the QR for brochure </p>
-        <img src="img/scanner  of borchure.jpg" alt="Brochure QR" class="footer-scanner">
-      </div>
-
       <div class="footer-socials">
         <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
@@ -569,36 +565,50 @@
   
 })();
 </script>
- <script>
-    const video = document.getElementById("intro-video");
-    const skipBtn = document.getElementById("skip-btn");
-    const mainContent = document.getElementById("main-content");
+ <style>
+#intro-video { opacity: 0; transition: opacity .5s ease; }
+#intro-video.loaded { opacity: 1; }
+</style>
 
-    function endIntro() {
-      video.classList.add("fade-out");
-      skipBtn.classList.add("fade-out");
+<script>
+const video = document.getElementById("intro-video");
+const introSource = document.getElementById("intro-source");
+const skipBtn = document.getElementById("skip-btn");
 
-      setTimeout(() => {
-        video.style.display = "none";
-        skipBtn.style.display = "none";
-        mainContent.style.display = "block";
-        document.body.style.overflow = "auto"; // enable scrolling
-      }, 1000);
+// Select video based on device
+function loadIntro() {
+    if (window.innerWidth <= 768) {
+        introSource.src = "video/intro2.mp4"; // mobile intro
+    } else {
+        introSource.src = "video/intro1.mp4"; // desktop intro
     }
 
-    video.onended = endIntro;
-    skipBtn.onclick = endIntro;
-  </script>
+    video.load();
+
+    video.onloadeddata = () => {
+        video.classList.add("loaded");
+    };
+}
+
+loadIntro();
+
+function endIntro() {
+    video.classList.remove("loaded");
+    skipBtn.classList.add("hide");
+
+    setTimeout(() => {
+        video.remove();
+        skipBtn.remove();
+    }, 600);
+}
+
+video.onended = endIntro;
+skipBtn.onclick = endIntro;
+</script>
 
 
 
 
-
-
-
-
-
- 
 
 </body>
 </html>
