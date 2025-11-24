@@ -1,4 +1,4 @@
-    /* Reset & base */
+        /* Reset & base */
             * {
                 margin: 0;
                 padding: 0;
@@ -18,7 +18,15 @@
                 --background: radial-gradient(circle at center, #0b0c10, #1f2833);
                 --light:aliceblue;
                 --honey:#ffb347;
+                --img: url(img/date.png);
             }
+
+             @font-face {
+        font-family: 'Comic';
+        src: url('fonts/badaboom_bb/BADABB__.TTF') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
 
 
             body {
@@ -215,6 +223,13 @@
         body.nav-open {
     overflow: hidden;   /* stop scrolling when menu is open */
         }
+       
+        nav .logo img {
+        height: 80px;
+        filter: drop-shadow(0 0 5px #ffb347);
+        margin-left: 10%;
+    }
+       
         
     }
 
@@ -227,7 +242,7 @@
                 background:url(img/date.png) no-repeat center /cover;
                 background-size:cover;
                 overflow: hidden;
-                padding: 0 0 60rem;
+                padding: 0 0 50rem;
                 text-align: center;
                 z-index: 1;
                 margin-bottom: 0%;
@@ -365,11 +380,12 @@
             }
     @media (max-width: 768px) {
     .header {
-        background-image: url(img/date.png);
+        background-image: url(img/Taarangan.png);
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
-        
+        margin-left: -4%;
+        padding-left: 0;
     }
     }
 
@@ -1080,7 +1096,7 @@
         font-size: 2.8rem;
         color: var(--honey);
         margin-bottom: 2rem;
-        font-family: 'Comicy',  sans-serif;
+        font-family: 'Comic', sans-serif;
     }
 
 
@@ -1131,7 +1147,9 @@
                 font-size: 2.8rem;
                 color: #ffb347;
                 margin-bottom: 1rem;
-                font-family: 'Comicy', sans-serif;
+                font-family: 'Comic', sans-serif;
+                 
+                 letter-spacing: 3px;
             }
 
             .campus p {
@@ -1243,31 +1261,21 @@
 }
 
 .footer-logo {
-  max-width: 250px;
-  height: auto;
-  object-fit: contain;
+  max-width: 350px;
+  height: 250px;
+  
 }
 
-.footer-scanner {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.footer-scanner:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(255, 191, 0, 0.4);
-}
 
 /* -------- SOCIAL ICONS -------- */
 .footer-socials {
   display: flex;
-  gap: 1.3rem;
+  gap: 2.3rem;
   font-size: 1.5rem;
   justify-content: flex-start;
+   margin-top: 1rem;
+   margin-left: 1rem;
 }
 
 .footer-socials a {
@@ -1284,6 +1292,8 @@
   font-size: 0.9rem;
   margin-top: 0;
   text-align: left;
+  margin-left: 5rem;
+  margin-top: 1rem;
 }
 
 /* -------- RIGHT SIDE NAV -------- */
@@ -1293,7 +1303,7 @@
   flex-direction: column;
   gap: 3.5rem;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 .footer-nav li a {
@@ -1326,7 +1336,8 @@
   }
 
   .footer-logo {
-    max-width: 200px;
+    max-width: 250px;
+    margin-left: -20px;
   }
 
   .footer-scanner {
@@ -1336,10 +1347,13 @@
 
   .footer-socials {
     justify-content: center;
+    margin-left: -10px;
   }
 
   .copyright {
     text-align: center;
+    margin: 0%;
+    
   }
 
   .footer-nav {
@@ -1684,7 +1698,7 @@
     }
 
 
-    /* ===== INTRO VIDEO ===== */
+    /* =====     VIDEO ===== */
     /* ===== INTRO VIDEO CONTAINER ===== */
  /* ================= INTRO VIDEO STYLES ================= */
 
@@ -1717,6 +1731,7 @@
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
+      background-attachment: fixed;
     }
 
     #skip-btn:hover {
@@ -1740,4 +1755,5 @@
     #main-content {
       display: none;
     }
+
 
