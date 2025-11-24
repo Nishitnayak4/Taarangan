@@ -200,16 +200,20 @@ body::before {
     }
 
     .strange {
-      display: block;
-      position: relative;
-      bottom: 0.5rem;
-      left: -3rem;
-      z-index: 11;
-    }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-    .strange img {
-      width: 262px;
-    }
+.strange img {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
 
     @keyframes pulseGlow {
       0% {
@@ -296,7 +300,7 @@ body::before {
     </div>
 
     <div class="strange">
-      <img src="img/doctor-strange-in-the-multiverse-of-madness-doctor-strange.gif" alt="Floating Logo" class="footer-logo" />
+      <img src="photos/whole.jpg" alt="Floating Logo" class="footer-logo" />
     </div>
   </section>
 
@@ -347,6 +351,12 @@ body::before {
         <img src="team/Pillar/NILESH.JPG" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
         <h3>NILESH DEY </h3> 
+        <p><strong>Vice ChairPerson</strong></p>
+      </div>
+      <div class="team-member">
+        <img src="team/Pillar/vcp.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>KHUSHBOO KALAL </h3> 
         <p><strong>Vice ChairPerson</strong></p>
       </div>
     
@@ -475,23 +485,14 @@ body::before {
         <h3>Shivank</h3> 
         <p><strong>SOCIAL MEDIA</strong></p>
        </div>
-
-       <div class="team-member">
-        <img src="team/Hod/Daksh_.jpg" alt="Ronak" />
-        <br><br><br><br><br><br><br><br><br>
-        <h3>Daksh</h3> 
-        <p><strong>Production head</strong></p>
-       </div> 
-
+       
+       
        <div class="team-member">
         <img src="team/Hod/Shashwat.jpg" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
         <h3>Shashwat</h3> 
         <p><strong>Production head</strong></p>
        </div> 
-       </div>
-       
-       <div class="team-row">
 
        <div class="team-member">
         <img src="team/Hod/ANJAYAN.JPG" alt="Ronak" />
@@ -499,8 +500,9 @@ body::before {
         <h3>Anjayan</h3> 
         <p><strong>JUDGES AND CELEB Head</strong></p>
        </div>
-
-
+       </div>
+       
+       <div class="team-row">
       <div class="team-member">
         <img src="team/Hod/kunal.JPG" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
@@ -521,17 +523,13 @@ body::before {
     
 
   <!-- FOOTER -->
-  <footer>
+   <footer>
   <div class="footer-container">
-   
     <div class="footer-left">
-        <div class="master-strange">
-      <img src="icons/taarangan_ffb347.png" alt=" Logo" class="footer-logo"></div>
-    <div class="master-strange">
-      <p>Scan the QR for brochure -></p>
-      <img src="img/scanner  of borchure.jpg" alt=" Logo" class="footer-scanner">
-</div>
-      
+      <div class="master-strange">
+        <img src="icons/taarangan_ffb347.png" alt="Logo" class="footer-logo">
+      </div>
+
       <div class="footer-socials">
         <a href="https://www.instagram.com/taarangan/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@Taarangan"><i class="fab fa-youtube"></i></a>
@@ -540,19 +538,15 @@ body::before {
         <a href="https://x.com/taaranganfest"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
 
-     
       <p class="copyright">© 2025 by Taarangan.</p>
     </div>
 
-   
     <ul class="footer-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="contact.html">Contact Us</a></li>
-     
-      
     </ul>
   </div>
 </footer>
