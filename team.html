@@ -213,6 +213,23 @@ body::before {
   display: block;
   border-radius: 10px;
 }
+@media (max-width: 768px) {
+  .strange img {
+    max-width: 95%;
+    width: 95%;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .strange img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
 
 
     @keyframes pulseGlow {
@@ -280,13 +297,12 @@ body::before {
           <div class="dropdown">
             <li><a href="#">TEAM</a></li>
             <div class="dropdown-content">
-              <a href="team.html">core committee</a>
-              <a href="website.html">website team</a>
+              <a href="team.html">Core committee</a>
+              <a href="website.html">Website team</a>
             </div>
           </div>
           <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
-          
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -396,6 +412,12 @@ body::before {
         <h3>SUMIT MISHRA</h3> 
         <p><strong>Special Taskforce</strong></p>
       </div>
+        <div class="team-member">
+        <img src="team/Pillar/stf.jpg" alt="Ronak" />
+        <br><br><br><br><br><br><br><br><br>
+        <h3>SUMIT MISHRA</h3> 
+        <p><strong>Special Taskforce</strong></p>
+      </div>
     </div><br>
 
             <h1>Head Of the Department</h1>
@@ -409,12 +431,7 @@ body::before {
         <p><strong>Admin Head</strong></p>
       </div>
 
-      <div class="team-member">
-        <img src="team/Hod/Sachi.jpg" alt="Ronak" />
-        <br><br><br><br><br><br><br><br><br>
-        <h3>Sanchi</h3> 
-        <p><strong>Public Relations</strong></p>
-       </div> 
+      
 
       <div class="team-member">
         <img src="team/Hod/Arya.JPG" alt="Ronak" />
@@ -423,17 +440,9 @@ body::before {
         <p><strong>Public Relations</strong></p>
        </div>
 
-      <div class="team-member">
-        <img src="team/Hod/chris.jpg" alt="Ronak" />
-        <br><br><br><br><br><br><br><br><br>
-        <h3>Chris</h3> 
-        <p><strong>Events Head</strong></p>
-      </div>
+      
 
-       </div> 
-
-          
-      <div class="team-row">
+       
 
         <div class="team-member">
         <img src="team/Hod/Devesh.jpg" alt="Ronak" />
@@ -449,8 +458,8 @@ body::before {
         <p><strong>Marketing Head</strong></p>
        </div>
       
-
-
+      <div class="team-row">
+      
       <div class="team-member">
         <img src="team/Hod/Aditya_.jpg" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
@@ -472,7 +481,7 @@ body::before {
       
       
 
-      <div class="team-row">
+     
       <div class="team-member">
         <img src="team/Hod/Aalok_.jpg" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
@@ -486,8 +495,8 @@ body::before {
         <h3>Shivank</h3> 
         <p><strong>SOCIAL MEDIA</strong></p>
        </div>
-       
-       
+       </div>
+       <div class="team-row">
        <div class="team-member">
         <img src="team/Hod/Shashwat.jpg" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
@@ -501,9 +510,9 @@ body::before {
         <h3>Anjayan</h3> 
         <p><strong>JUDGES AND CELEB Head</strong></p>
        </div>
-       </div>
+      
        
-       <div class="team-row">
+       
       <div class="team-member">
         <img src="team/Hod/kunal.JPG" alt="Ronak" />
         <br><br><br><br><br><br><br><br><br>
@@ -555,8 +564,14 @@ body::before {
   <!-- JS -->
   <script>
     const navLinks = document.getElementById("navLinks");
-    function showMenu() { navLinks.style.right = "0"; }
-    function hideMenu() { navLinks.style.right = "-289px"; }
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-459px";
+    }
   </script>
 
  
@@ -576,4 +591,3 @@ body::before {
   
 </body>
 </html>
-
