@@ -40,7 +40,7 @@ body.nav-open {
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--light);
+      background: var(--dark);
       color: var(--honey);
       min-height: 100vh;
       display: flex;
@@ -61,6 +61,7 @@ body.nav-open {
   transform: translateX(100%); /* hidden off-screen */
   transition: transform 0.3s ease-in-out;
   padding-top: 60px;
+  text-align: center;
 }
 
 .nav-links.active {
@@ -71,7 +72,7 @@ body.nav-open {
 .nav-links .fa-xmark {
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 200px;
   font-size: 2rem;
   color: #ff3f3f;
   cursor: pointer;
@@ -140,74 +141,66 @@ body.nav-open {
       z-index: 2;
     }
 
-    main {
-      flex: 1;
-      max-width: 700px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;
-      background-color:var(--light);
-    }
 
-    form {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 63, 63, 0.4);
-      color: var(--text-light);
-    }
+.rules-box {
+  background:
+    radial-gradient(circle, rgba(255,120,0,0.25), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0,140,255,0.25), transparent 60%),
+    linear-gradient(135deg, #0b0c10, #1a1f2e);
+  padding: 2rem;
 
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
+  color: #fff;
+}
 
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      font-family: inherit;
-      background: #333;
-      color: var(--text-light);
-      box-shadow: inset 0 0 8px #ff3f3f88;
-      resize: vertical;
-      transition: box-shadow 0.3s ease;
-    }
 
-    form input:focus,
-    form textarea:focus {
-      outline: none;
-      box-shadow: 0 0 12px #ffb347;
-      background: #2a2a2a;
-    }
 
-    form button {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 0.85rem 2rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 63, 63, 0.5);
-      transition: background 0.3s ease;
-      user-select: none;
-      
-    }
 
-    form button:hover {
-      background: #ffb347;
-      box-shadow: 0 8px 30px rgba(255, 179, 71, 0.7);
-      color: #111;
-    }
+
+
+.rules-box h2 {
+  color: var(--muted );
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.rules-box ul {
+  padding-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.rules-box li {
+  margin-bottom: 0.7rem;
+  color: var(--text-light);
+}
+
+.brochure-link {
+  color: var(--accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.brochure-link:hover {
+  color: #ffb347;
+}
+
+.event-btn {
+  background: var(--accent);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(255,63,63,0.5);
+}
+
+.event-btn:hover {
+  background: #ffb347;
+  color: black;
+}
 
     footer {
       background: var(--dark);
@@ -236,13 +229,14 @@ body.nav-open {
       width: 100%;
       height: 400px;
       border: none;
-      border-radius: 12px;
       box-shadow: 0 0 20px rgba(255, 63, 63, 0.4);
-      margin: 2rem 0;
+      
     }
 
     .cta {
-      background: var(--light);
+      background:radial-gradient(circle, rgba(255,120,0,0.25), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0,140,255,0.25), transparent 60%),
+    linear-gradient(135deg, #0b0c10, #1a1f2e); ;
       color: var(--dark);
       text-align: center;
       user-select: none;
@@ -251,14 +245,14 @@ body.nav-open {
 
     .cta h1 {
       font-size: 2.5rem;
-      color: var(--dark);
+      color: var(--light);
       margin-bottom: 1rem;
       font-weight: 700;
     }
 
     .cta h3 {
       font-style: normal;
-      color: var(--dark);
+      color: var(--light);
       margin-bottom: 2rem;
       line-height: 1.6;
     }
@@ -285,6 +279,7 @@ body.nav-open {
 }
     .pr ,.marketing{
       border: solid;
+      border-color: var(--light);
       border-radius: 2%;
     }
 
@@ -329,6 +324,7 @@ body.nav-open {
   margin-top: 2rem;
   text-align: center;
   border: solid;
+  border-color:var(--light) ;
   border-radius: 10px;
   padding: 1.5rem;
   max-width: 500px;
@@ -345,7 +341,7 @@ body.nav-open {
 }
 
 .admin h3 {
-  color: var(--dark);
+  color: var(--light);
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -364,6 +360,33 @@ body.nav-open {
   }
 }
 
+.brochure {
+  position:absolute;
+  display: flex;
+  justify-content: right;
+  margin-top: -27%;
+  margin-left: 60%;
+}
+
+.brochure img {
+  width: 70%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brochure img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Mobile view tweaks */
+@media (max-width: 768px) {
+  .brochure {
+    display: none !important;
+  }
+}
 
     
   </style>
@@ -395,27 +418,30 @@ body.nav-open {
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
 
-  <header>
-    <h1>Contact Us</h1>
-  </header>
 
-  <main>
-    <form id="contactForm" novalidate>
-      <label for="name">Name *</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
 
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
+  <div class="rules-box">
+  <h2>RULES AND REGULATIONS FOR ONLINE REGISTRATION</h2>
 
-      <label for="subject">Subject *</label>
-      <input type="text" id="subject" name="subject" placeholder="Subject of your message" required aria-required="true" />
+  <ul>
+    <li>Kindly ensure that the details are filled correctly before registration.</li>
+    <li>Follow all the rules and regulations mentioned in the brochure.</li>
+    <li>Carry your college ID cards on the day of event.</li>
+    <li>NCP and OTSE entries won’t be registered online.</li>
+    <li>For one event, only one team is allowed to register as college participant.</li>
+    <li>Kindly ensure that you have submitted your duly filled acceptance and nomination form before registering.</li>
+    <li>For any doubts, contact:</li>
+  </ul>
 
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required aria-required="true"></textarea>
+  <a href="broucher/TAARANGAN 25-26.pdf" class="brochure-link" target="_blank">Click here to Download the Brochure</a>
 
-      <button  type="submit">Send Message</button>
-    </form>
-  </main>
+  <button class="event-btn" ><a href="https://forms.gle/vfcPh4RvWat4mUQY7" style="color: #eee; text-decoration: none;" target="_blank"> Registration</a></button>
+
+  <div class="brochure">
+    <img src="img/date.png" alt="Taarangan 2k25 Brochure" />
+  </div>  
+</div>
+
    
   <section class="contact-map">
     <iframe 
@@ -435,7 +461,6 @@ body.nav-open {
     <div class="pr">
       <h1>Public Relations</h1>
       <h3>
-        SANCHI SINGH : +91 98678 92665<br>
         ARYA SATYARAHTEE : +91 88253 34452<br>
         JATIN PATEL : +91 86523 15502<br>
         Email - publicrelations@taarangan.in
