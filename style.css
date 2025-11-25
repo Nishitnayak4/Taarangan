@@ -1338,7 +1338,7 @@
 
     /* Footer logo */
     .footer-logo img {
-        width: 90px;
+        width: 70px;
         height: auto;
         
     }
@@ -1773,5 +1773,6 @@
     #main-content {
       display: none;
     }
+
 
 
