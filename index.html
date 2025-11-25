@@ -37,14 +37,14 @@
           <div class="dropdown">
           <li><a href="#">TEAM</a></li>
     <div class="dropdown-content">
-      <a href="team.html">core committee</a>
-      <a href="website.html">website team</a>
+      <a href="team.html">Core committee</a>
+      <a href="website.html">Website team</a>
             </div> </div>
          
           
           <!--<li><a href="leaderboard.html" class="active">LEADERBOARD</a></li>-->
-          <li><a href="contact.html">CONTACT</a></li>
           <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
           <!--<li><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-instagram"  style="margin-right:1%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fab fa-facebook-square" style="margin-right:4%"></i></a><a href="https://www.instagram.com/taarangan/"> <i class="fa-solid fa-user"></i></a> </li>-->
         </ul>
       </div>
@@ -131,7 +131,7 @@
  
 
  <section id="countdown-section" aria-label="Countdown to event">
-  <div class="countdown-card" data-target="2025-12-01T00:00:00+05:30">
+  <div class="countdown-card" data-target="2025-12-18T00:00:00+05:30">
     <div class="countdown-title">CountDown</div>
     <div id="countdown">
       <div class="time-part"><span class="num" id="cd-days">0</span><span class="label">Days</span></div>
@@ -142,6 +142,7 @@
     <div id="countdown-message" class="countdown-message" role="status" aria-live="polite"></div>
   </div>
 </section>
+
 
   </section>
 
@@ -185,7 +186,7 @@
     }
 
     function hideMenu() {
-      navLinks.style.right = "-289px";
+      navLinks.style.right = "-459px";
     }
   </script>
    <script>
@@ -264,47 +265,60 @@
             addLegoDots();
         });
     </script>
-    <script>
-(function(){
-  // Modify these to match your nav structure
-  
-  // Create list item
-  const li = document.createElement('li');
+   <script>
+(function () {
+  const card = document.querySelector(".countdown-card");
+  const targetDate = new Date(card.dataset.target);
 
-  li.setAttribute('aria-hidden','false');
-  li.innerHTML = '<a href="#countdown-section" class="nav-countdown-link" title="Countdown"><span class="cd-d">0</span>d <span class="cd-h">00</span>:<span class="cd-m">00</span>:<span class="cd-s">00</span></a>';
+  const dEl = document.getElementById("cd-days");
+  const hEl = document.getElementById("cd-hours");
+  const mEl = document.getElementById("cd-mins");
+  const sEl = document.getElementById("cd-secs");
+  const msgEl = document.getElementById("countdown-message");
 
-  navUl.appendChild(li);
-
-  // target date
-  const target = new Date('2025-12-01T00:00:00+05:30');
-
-  function pad(n){ return n < 10 ? '0' + n : '' + n; }
-  function updateNav(){
-    const now = new Date();
-    let diff = target.getTime() - now.getTime();
-    if (diff <= 0){
-      li.querySelector('.nav-countdown-link').textContent = 'LIVE';
-      clearInterval(navTimer);
-      return;
-    }
-    const days = Math.floor(diff / (24*60*60*1000));
-    diff -= days * 24*60*60*1000;
-    const hours = Math.floor(diff / (60*60*1000));
-    diff -= hours * 60*60*1000;
-    const mins = Math.floor(diff / (60*1000));
-    diff -= mins * 60*1000;
-    const secs = Math.floor(diff / 1000);
-
-    li.querySelector('.cd-d').textContent = days;
-    li.querySelector('.cd-h').textContent = pad(hours);
-    li.querySelector('.cd-m').textContent = pad(mins);
-    li.querySelector('.cd-s').textContent = pad(secs);
+  function pad(n) {
+    return n < 10 ? "0" + n : n;
   }
 
-  
+  function updateCountdown() {
+    const now = new Date();
+    let diff = targetDate - now;
+
+    if (diff <= 0) {
+      dEl.textContent = "0";
+      hEl.textContent = "00";
+      mEl.textContent = "00";
+      sEl.textContent = "00";
+      msgEl.textContent = "The event is LIVE!";
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(diff / (24 * 60 * 60 * 1000));
+    diff %= (24 * 60 * 60 * 1000);
+
+    const hours = Math.floor(diff / (60 * 60 * 1000));
+    diff %= (60 * 60 * 1000);
+
+    const mins = Math.floor(diff / (60 * 1000));
+    diff %= (60 * 1000);
+
+    const secs = Math.floor(diff / 1000);
+
+    dEl.textContent = days;
+    hEl.textContent = pad(hours);
+    mEl.textContent = pad(mins);
+    sEl.textContent = pad(secs);
+  }
+
+  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown();
 })();
 </script>
+
+
+
+
  <style>
 #intro-video { opacity: 0; transition: opacity .5s ease; }
 #intro-video.loaded { opacity: 1; }
