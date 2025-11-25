@@ -985,11 +985,9 @@
             
             /* Responsive adjustments */
             @media (max-width: 768px) {
-                
-                
-                
-                
-                
+                .marvel-comic-section {
+                   display: block !important;
+                }   
                 
             }
 
