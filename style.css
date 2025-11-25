@@ -1337,11 +1337,7 @@
     }
 
     /* Footer logo */
-    .footer-logo img {
-        width: 130px;
-        height: auto;
-        
-    }
+    
 
     /* Footer nav becomes horizontal bar */
     .footer-nav {
@@ -1376,6 +1372,20 @@
         text-align: center;
         margin: 1%;
         }
+}
+@media (max-width: 480px) {
+    footer .footer-logo img {
+        width: 95px;
+        max-width: 45vw;
+    }
+}
+
+/* Very small phones (iPhone SE, old Android) */
+@media (max-width: 360px) {
+    footer .footer-logo img {
+        width: 80px;
+        max-width: 50vw;
+    }
 }
 
 
@@ -1773,7 +1783,5 @@
     #main-content {
       display: none;
     }
-
-
 
 
