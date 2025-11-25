@@ -204,7 +204,7 @@
             display: block; /* close button visible */
             position: absolute;
             top: 2rem;
-             right: 200px; 
+            right: 50px; 
             font-size: 2rem;
             color: #ff3f3f;
             cursor: pointer;
@@ -212,13 +212,13 @@
 
         .nav-links {
             position: fixed;
-             background: linear-gradient(160deg, #0d0d0d, #1a1a1a, #11131e, #191c25);
+            background: rgba(28, 31, 38, 0.95);
             height: 100vh;
-            width: 250px;
+            width: 450px;
             top: 0;
-            right: -287px; /* hidden initially */
+            right: -459px; /* hidden initially */
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 10rem;
             padding-top: 6rem;
             box-shadow: -5px 0 15px #ff0000aa;
             transition: 0.4s ease;
@@ -226,7 +226,7 @@
 
         .nav-links ul {
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 5rem;
             padding-left: 1.5rem;
             
         }
@@ -1197,13 +1197,7 @@
     object-fit: contain;       /* avoid stretching */
 }
 
-/* Mobile optimization */
-@media (max-width: 600px) {
-    .footer-logo {
-        width: 100px;          /* smaller for phones */
-        max-width: 80vw;
-    }
-}
+
 
 
 
@@ -1277,15 +1271,16 @@
     }
 
     .master-strange img {
-        max-width: 300px;   /* perfect on small phones */
+        max-width: 400px;   /* perfect on small phones */
     }
 
     /* Footer logo */
         .footer-logo img {
+    width: 380px;
+    height: auto;
+    padding: 0;
+}
 
-            height: auto;
-            padding: 0%;
-        }
 
     /* Footer nav becomes horizontal bar */
     .footer-nav {
@@ -1309,7 +1304,7 @@
     .footer-social {
         display: flex;
         justify-content: center;
-        gap: 1.2rem;
+        gap: 2.2rem;
         font-size: 1.4rem;
         margin-top: -9px;
         margin-right: 10%;
@@ -1519,7 +1514,7 @@
                 }
             
                 .campus{
-                    padding: 0;
+                    padding-top:20px ;
                 }
                 
             .campus .row {
@@ -1530,6 +1525,12 @@
             /* Forces full width on mobile */
             flex: 1 1 90%; 
             max-width: 90%; 
+        }
+        .course{
+            padding: 2rem 1rem;
+        }
+        .course h1{
+            margin-bottom: 10px;
         }
             }
             
