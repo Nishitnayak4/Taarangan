@@ -1237,7 +1237,7 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap; /* responsive stacking */
-  padding: 2rem 3rem;
+  padding: 2rem ;
 }
 
 /* -------- LEFT SECTION -------- */
@@ -1276,7 +1276,7 @@
   font-size: 1.5rem;
   justify-content: flex-start;
    margin-top: 1rem;
-   margin-left: 1rem;
+   
 }
 
 .footer-socials a {
@@ -1325,7 +1325,7 @@
 
     footer {
         text-align: center;
-        padding: 2rem 1rem;
+       
     }
 
     .footer-container {
@@ -1338,8 +1338,9 @@
 
     /* Footer logo */
     .footer-logo img {
-        width: 130px;
+        width: 90px;
         height: auto;
+        
     }
 
     /* Footer nav becomes horizontal bar */
@@ -1366,14 +1367,15 @@
         justify-content: center;
         gap: 1.2rem;
         font-size: 1.4rem;
+        margin-top: -9px;
     }
 
     /* Copyright center */
-    .footer-copy {
+    .copyright {
         font-size: 0.8rem;
         text-align: center;
-        opacity: 0.6;
-    }
+        margin: 1%;
+        }
 }
 
 
