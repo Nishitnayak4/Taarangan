@@ -7,6 +7,7 @@
             }
             html, body {
     overflow-x: hidden !important;
+
 }
             
             :root {
@@ -194,7 +195,7 @@
             display: block; /* close button visible */
             position: absolute;
             top: 2rem;
-            right: 2rem;
+             right: 200px; 
             font-size: 2rem;
             color: #ff3f3f;
             cursor: pointer;
@@ -202,14 +203,14 @@
 
         .nav-links {
             position: fixed;
-            background: rgba(17, 17, 17, 0.95);
+             background: linear-gradient(160deg, #0d0d0d, #1a1a1a, #11131e, #191c25);
             height: 100vh;
             width: 250px;
             top: 0;
             right: -287px; /* hidden initially */
             flex-direction: column;
             gap: 1.5rem;
-            padding-top: 4rem;
+            padding-top: 6rem;
             box-shadow: -5px 0 15px #ff0000aa;
             transition: 0.4s ease;
         }
@@ -1317,49 +1318,64 @@
 }
 
 /* -------- MOBILE RESPONSIVE -------- */
+/* ---------------------- */
+/* FIX FOOTER NAV MOBILE  */
+/* ---------------------- */
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 2rem;
-  }
 
-  .footer-left {
-    align-items: center;
-  }
+    footer {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
 
-  .master-strange {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-  }
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        width: 100%;
+    }
 
-  .footer-logo {
-    max-width: 250px;
-    margin-left: -20px;
-  }
+    /* Footer logo */
+    .footer-logo img {
+        width: 130px;
+        height: auto;
+    }
 
-  .footer-scanner {
-    width: 130px;
-    height: auto;
-  }
+    /* Footer nav becomes horizontal bar */
+    .footer-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+    }
 
-  .footer-socials {
-    justify-content: center;
-    margin-left: -10px;
-  }
+    .footer-nav a {
+        font-size: 0.9rem;
+        color: var(--light);
+        text-decoration: none;
+        font-weight: 600;
+    }
 
-  .copyright {
-    text-align: center;
-    margin: 0%;
-    
-  }
+    /* Social icons center */
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        font-size: 1.4rem;
+    }
 
-  .footer-nav {
-    text-align: center;
-  }
+    /* Copyright center */
+    .footer-copy {
+        font-size: 0.8rem;
+        text-align: center;
+        opacity: 0.6;
+    }
 }
+
 
 
 
