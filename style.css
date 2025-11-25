@@ -1532,6 +1532,9 @@
         .course h1{
             margin-bottom: 10px;
         }
+        .course-col{
+            margin-left: -10%;
+    }
             }
             
             
