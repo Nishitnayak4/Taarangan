@@ -383,7 +383,6 @@
     .header {
         background-image: url(img/Taarangan.png);
         background-position: center;
-      
         background-attachment: fixed;
         margin-left: -4%;
         padding-left: 0;
@@ -1791,6 +1790,5 @@
     #main-content {
       display: none;
     }
-
 
 
