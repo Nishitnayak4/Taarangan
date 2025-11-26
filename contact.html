@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Taarangan 2k25 — Contact Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -356,13 +357,21 @@ body.nav-open {
   .admin h1 {
     font-size: 1.5rem;
     color: var(--light);
-  }
-
-  .admin h3 {
-    font-size: 0.95rem;
-    color: var(--light);
-  }
+  } 
 }
+/* Force all numbers/phone links to stay white */
+a[href^="tel"] {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Also fix PR / Marketing / Admin boxes */
+.pr a, .marketing a, .admin a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+
 
 .brochure {
   position: absolute;
