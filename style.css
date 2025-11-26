@@ -1210,8 +1210,9 @@
   display: flex;
   gap: 2.3rem;
   font-size: 1.5rem;
-  justify-content: flex-start;
+  justify-content: center;
    margin-top: 1rem;
+   
    
 }
 
@@ -1261,39 +1262,47 @@
 
     footer {
         text-align: center;
-       
+        width: 100%;
     }
 
     .footer-container {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         gap: 1.2rem;
         width: 100%;
-        padding: 0%;
+        padding: 0;
+        margin: 0 auto; /* ensures center alignment */
     }
 
+    /* Doctor Strange image */
     .master-strange img {
-        max-width: 400px;   /* perfect on small phones */
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
     }
 
-    /* Footer logo */
-        .footer-logo img {
-    width: 380px;
-    height: auto;
-    padding: 0;
-}
+    /* Footer logo perfectly centered */
+    .footer-logo img {
+        width: 80%;        /* Auto responsive for every phone */
+        max-width: 380px;  /* Prevent oversized */
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 
-
-    /* Footer nav becomes horizontal bar */
+    /* Footer nav perfectly centered */
     .footer-nav {
         width: 100%;
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0 auto;
         padding: 0;
-        margin: 0;
     }
 
     .footer-nav a {
@@ -1301,25 +1310,29 @@
         color: var(--light);
         text-decoration: none;
         font-weight: 600;
+        text-align: center;
     }
 
-    /* Social icons center */
+    /* Social icons centered */
     .footer-social {
         display: flex;
         justify-content: center;
-        gap: 2.2rem;
+        align-items: center;
+        gap: 1.8rem;
         font-size: 1.4rem;
-        margin-top: -9px;
-        margin-right: 1%;
+        margin: 0 auto;
+        width: 100%;
     }
 
     /* Copyright center */
     .copyright {
         font-size: 0.8rem;
         text-align: center;
-        margin: 1%;
-        }
+        width: 100%;
+        margin: 0.5rem 0;
+    }
 }
+
 
 
 
