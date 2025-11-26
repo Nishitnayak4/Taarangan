@@ -365,32 +365,46 @@ body.nav-open {
 }
 
 .brochure {
-  position:absolute;
-  display: flex;
-  justify-content: right;
-  margin-top: -27%;
-  margin-left: 60%;
+  position: absolute;
+  right: 3%;
+  top: 19%;
+  z-index: 20;
+
+  /* Background frame */
+  background: rgba(0, 0, 0, 0.35);
+  padding: 14px;
+  border-radius: 22px;
+  backdrop-filter: blur(7px);
+
+  /* Shadow */
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.28);
 }
 
+/* FIXED IMAGE BEHAVIOUR */
 .brochure img {
-  width: 70%;
-  max-width: 500px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 330px;             /* clean poster size */
+  max-width: 27vw;          /* responsive on large screens */
+  height: auto;             /* prevents cropping */
+  display: block;           /* removes inline gaps */
+  border-radius: 14px;      /* perfect rounding */
+  object-fit: contain;      /* keeps full poster visible */
+  object-position: center;  /* perfectly centered inside frame */
+  transition: 0.3s ease;
 }
 
+/* Hover */
 .brochure img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
 }
 
-/* Mobile view tweaks */
+/* Hide on mobile */
 @media (max-width: 768px) {
   .brochure {
     display: none !important;
   }
 }
+
 
     
   </style>
